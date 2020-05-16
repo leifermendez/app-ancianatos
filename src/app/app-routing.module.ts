@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'staff',
-    loadChildren: './staff/staff.module#StaffRoutingModule',
+    loadChildren: './staff/staff.module#StaffModule',
   },
   {
     path: 'user',
