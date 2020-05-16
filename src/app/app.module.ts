@@ -9,14 +9,20 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HeaderComponent} from './components/header/header.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { LoggedUserComponent } from './components/logged-user/logged-user.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {LoggedUserComponent} from './components/logged-user/logged-user.component';
 import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
-import { Page404pageComponent } from './components/page404page/page404page.component';
+import {Page404pageComponent} from './components/page404page/page404page.component';
+import {LottieModule} from 'ngx-lottie';
+import player from 'lottie-web';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
+}
+
+export function playerFactory() {
+  return player;
 }
 
 @NgModule({
@@ -30,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     RouterModule,
     ModalModule.forRoot(),
     HttpClientModule,
+    LottieModule.forRoot({player: playerFactory}),
     TranslateModule.forRoot({
       defaultLanguage: 'es',
       loader: {
@@ -42,9 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FontAwesomeModule
   ],
   providers: [],
-  exports: [
-
-  ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

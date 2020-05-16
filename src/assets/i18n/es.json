@@ -19,5 +19,17 @@
       "AVATAR": "Avatar",
       "SEND": "Enviar"
     }
+  },
+  "404": {
+    "BACK": "Volver"
+  },
+  "LOGIN": {
+    "EMAIL": "Email",
+    "EMAIL_PLACEHOLDER": "Ingresa tu email",
+    "PASSWORD": "Contraseña",
+    "SEND": "Entrar"
+  },
+  "ERROR": {
+    "LABEL": "Error"
   }
 }

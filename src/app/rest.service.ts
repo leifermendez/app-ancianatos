@@ -97,6 +97,7 @@ export class RestService {
         case 401:
           this.cookieService.delete('session');
           this.cookieService.delete('user');
+          this.sharedService.alert(error, message);
           break;
         case 404:
           // this.cookieService.deleteAll();

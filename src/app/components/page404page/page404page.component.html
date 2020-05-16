@@ -1,1 +1,10 @@
-<p>page404page works!</p>
+<div class="text-center p-4 wrapper-page">
+  <ng-lottie [options]="options"
+             height="200px"
+             (animationCreated)="animationCreated($event)"></ng-lottie>
+  <div>
+    <a [routerLink]="['/']" class="btn btn-outline-secondary">
+      {{"404.BACK" |translate}}
+    </a>
+  </div>
+</div>
