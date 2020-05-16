@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  background-color: #fff;
+}
+
+.header {
+  font-weight: 600;
+  box-shadow: 0 0 14px rgba(135, 135, 135, 0.14);
+}
