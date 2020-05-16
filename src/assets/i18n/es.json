@@ -13,6 +13,7 @@
       "EMAIL": "Email",
       "EMAIL_PLACEHOLDER": "Ingresa el mail",
       "LEVEL": "Level",
+      "LEVEL_PLACEHOLDER": "Level",
       "AVATAR": "Avatar"
     }
   }

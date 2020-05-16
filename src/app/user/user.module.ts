@@ -6,6 +6,7 @@ import { ListComponent } from './pages/list/list.component';
 import { AddComponent } from './pages/add/add.component';
 import {HomeModule} from '../home/home.module';
 import {TranslateModule} from '@ngx-translate/core';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {TranslateModule} from '@ngx-translate/core';
     CommonModule,
     UserRoutingModule,
     HomeModule,
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

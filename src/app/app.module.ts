@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HeaderComponent} from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoggedUserComponent } from './components/logged-user/logged-user.component';
+import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -25,6 +26,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    ModalModule.forRoot(),
     HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'es',
