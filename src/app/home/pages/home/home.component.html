@@ -1,8 +1,12 @@
 <app-header></app-header>
+<app-logged-user></app-logged-user>
 <div class="content-row p-2">
   <div class="col-12 m-0 row p-0">
-    <div class="col-6 p-2" *ngFor="let a of [1,2,2,2]">
-      <div class="block">block</div>
+    <div class="col-6 p-2" *ngFor="let item of menu">
+      <div class="block" [routerLink]="item?.source">
+        <fa-icon [icon]="item?.icon" [size]="'2x'"></fa-icon>
+        <div>{{item?.name}}</div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,24 @@
+<app-header label="User" [icon]="faUser"></app-header>
+<app-logged-user></app-logged-user>
+<div class="edit-add-user p-2 pl-2 pr-2 ml-3 mr-3">
+  <form>
+    <div class="form-group">
+      <label for="form_name">{{"USER.FORM.NAME" |translate}}</label>
+      <input type="text" class="form-control" id="form_name"
+             placeholder="">
+      <small class="form-text text-muted">{{"USER.FORM.NAME_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label for="form_email">{{"USER.FORM.EMAIL" |translate}}</label>
+      <input type="email" class="form-control" id="form_email"
+             placeholder="">
+      <small class="form-text text-muted">{{"USER.FORM.EMAIL_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label for="form_level">{{"USER.FORM.EMAIL" |translate}}</label>
+      <input type="email" class="form-control" id="form_level"
+             placeholder="">
+      <small class="form-text text-muted">{{"USER.FORM.EMAIL_PLACEHOLDER" |translate}}</small>
+    </div>
+  </form>
+</div>

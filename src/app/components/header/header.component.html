@@ -1,3 +1,6 @@
-<div class="text-center pl-4 pt-2 pb-2 pr-4 header">
+<div [routerLink]="['/']" class="text-center pl-4 pt-2 pb-2 pr-4 header d-flex justify-content-between">
   {{"HEADER.TITLE" | translate}}
+
+  <span *ngIf="label"><fa-icon *ngIf="icon" [icon]="icon"></fa-icon>
+    {{label}}</span>
 </div>

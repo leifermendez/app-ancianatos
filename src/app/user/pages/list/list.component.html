@@ -1,0 +1,17 @@
+<app-header label="User" [icon]="faUser"></app-header>
+<app-logged-user></app-logged-user>
+<div class="list-user p-2 pl-3 pr-3">
+  <div class="form-group">
+    <input type="text" class="form-control src-input" id="src" placeholder="Buscar...">
+  </div>
+  <ul>
+    <li [routerLink]="['/','user','add',datum?.id]" *ngFor="let datum of data">
+      <div class="d-flex justify-content-between">
+        <b>{{datum?.name}} </b> <small class="text-muted">{{datum?.level}}</small>
+      </div>
+      <div>
+        <small>{{datum?.email}}</small>
+      </div>
+    </li>
+  </ul>
+</div>

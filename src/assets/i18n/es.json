@@ -5,5 +5,15 @@
   "AUTH": {
   },
   "HOME": {
+  },
+  "USER": {
+    "FORM": {
+      "NAME": "Nombre",
+      "NAME_PLACEHOLDER": "Ingresa nombre",
+      "EMAIL": "Email",
+      "EMAIL_PLACEHOLDER": "Ingresa el mail",
+      "LEVEL": "Level",
+      "AVATAR": "Avatar"
+    }
   }
 }
