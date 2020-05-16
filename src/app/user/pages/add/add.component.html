@@ -17,17 +17,18 @@
     <div class="form-group">
       <label for="form_level">{{"USER.FORM.LEVEL" |translate}}</label>
       <select formControlName="level" class="form-control" id="form_level">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option *ngFor="let level of levels" [value]="level?.value">{{level?.name}}</option>
       </select>
       <small class="form-text text-muted">{{"USER.FORM.LEVEL_PLACEHOLDER" |translate}}</small>
     </div>
-    <div class="text-center">
-      <button>Envia {{form.valid}}</button>
+    <div class="form-group">
+      <label for="form_level">{{"USER.FORM.TAG" |translate}}</label>
+      <tag-input formControlName="extra" [ngModel]="itemsAsObjects"></tag-input>
+      <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
     </div>
 
+    <div class="text-center">
+      <button [disabled]="!form.valid" class="btn btn-info btn-block">{{"USER.FORM.SEND" |translate}}</button>
+    </div>
   </form>
 </div>

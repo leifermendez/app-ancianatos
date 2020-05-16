@@ -10,6 +10,24 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class AddComponent implements OnInit {
   faUser = faUser;
   public form: FormGroup;
+  public levels = [
+    {
+      name: 'Admin',
+      value: 'admin',
+      select: false
+    },
+    {
+      name: 'Manager',
+      value: 'manager',
+      select: false
+    },
+    {
+      name: 'User',
+      value: 'user',
+      select: false
+    }
+  ];
+  public itemsAsObjects = [{value: 0, display: 'Angular'}, {value: 1, display: 'React'}];
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -25,6 +43,6 @@ export class AddComponent implements OnInit {
   }
 
   onSubmit = () => {
-    console.log(this.form.value)
+    console.log(this.form.value);
   };
 }

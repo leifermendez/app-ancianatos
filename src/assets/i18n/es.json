@@ -13,8 +13,11 @@
       "EMAIL": "Email",
       "EMAIL_PLACEHOLDER": "Ingresa el mail",
       "LEVEL": "Level",
-      "LEVEL_PLACEHOLDER": "Level",
-      "AVATAR": "Avatar"
+      "LEVEL_PLACEHOLDER": "Selecciona un nivel",
+      "TAG": "Etiquetas",
+      "TAG_PLACEHOLDER": "Agregar etiquetas",
+      "AVATAR": "Avatar",
+      "SEND": "Enviar"
     }
   }
 }

@@ -12,6 +12,7 @@ import {HeaderComponent} from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoggedUserComponent } from './components/logged-user/logged-user.component';
 import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
+import { Page404pageComponent } from './components/page404page/page404page.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -21,6 +22,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    Page404pageComponent,
   ],
   imports: [
     BrowserModule,
