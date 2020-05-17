@@ -4,6 +4,8 @@ import {faHome, faTrash, faDownload} from '@fortawesome/free-solid-svg-icons';
 import {RestService} from '../../../rest.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ShareService} from '../../../share.service';
+import {FPickerAdapter} from '../../../FPickerAdapter';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-add',
@@ -18,11 +20,13 @@ export class AddComponent implements OnInit {
   public loading = false;
   public itemsAsObjects: any;
   public id: any = false;
+  adapter = new FPickerAdapter(this.http);
 
   constructor(private formBuilder: FormBuilder,
               private rest: RestService,
               private router: Router,
               private shared: ShareService,
+              private http: HttpClient,
               private route: ActivatedRoute) {
   }
 

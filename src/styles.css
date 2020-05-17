@@ -7,3 +7,25 @@ body {
   font-weight: 400;
   color: #222;
 }
+
+.customPicker .file-drop-wrapper {
+  padding-top: 0 !important;
+}
+
+.customPicker file-drop {
+  padding: 0 !important;
+}
+
+.customPicker #dropZone {
+  max-width: 440px;
+  margin: auto;
+  border: 1px solid #efefef !important;
+  border-radius: 3px !important;
+}
+
+.customPicker .file-browse-button {
+  background-color: #f5f5f5 !important;
+  padding: 8px 18px !important;
+  color: #8f8f8f !important;
+  font-weight: 500 !important;
+}

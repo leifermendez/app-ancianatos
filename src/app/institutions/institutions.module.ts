@@ -11,6 +11,7 @@ import {TagInputModule} from 'ngx-chips';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {LoadingButtonDirective} from '../loading-button.directive';
 import {LoadingBlockComponent} from '../components/loading-block/loading-block.component';
+import {FilePickerModule} from 'ngx-awesome-uploader';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {LoadingBlockComponent} from '../components/loading-block/loading-block.c
     TranslateModule,
     TagInputModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    FilePickerModule
   ]
 })
 export class InstitutionsModule {
