@@ -16,3 +16,8 @@
 input.ng-touched.ng-invalid {
   border: solid 1px #ff756b;
 }
+.alert-info {
+  padding: .35rem;
+  font-size: .75rem;
+  border-radius: 3px;
+}

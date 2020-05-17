@@ -12,15 +12,17 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {LoadingButtonDirective} from '../loading-button.directive';
 import {LoadingBlockComponent} from '../components/loading-block/loading-block.component';
 import {FilePickerModule} from 'ngx-awesome-uploader';
+import {SharedModule} from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [AddComponent, ListComponent, LoadingButtonDirective, LoadingBlockComponent],
+  declarations: [AddComponent, ListComponent],
   imports: [
     CommonModule,
     InstitutionsRoutingModule,
     HomeModule,
     ReactiveFormsModule,
+    SharedModule,
     TranslateModule,
     TagInputModule,
     FontAwesomeModule,

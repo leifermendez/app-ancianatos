@@ -10,11 +10,20 @@
     </div>
     <div class="form-group">
       <label for="form_email">{{"USER.FORM.EMAIL" |translate}}</label>
-      <input type="email" formControlName="email" class="form-control" id="form_email"
+      <input readonly type="email" formControlName="email" class="form-control" id="form_email"
              placeholder="">
       <small class="form-text text-muted">{{"USER.FORM.EMAIL_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
+      <label>{{"USER.FORM.TAG" |translate}}</label>
+      <tag-input [identifyBy]="'key'" [displayBy]="'value'" [placeholder]="''" [(ngModel)]="itemsAsObjects"
+                 [ngModelOptions]="{standalone: true}"></tag-input>
+      <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <div *ngIf="lvl !=='admin'" class="alert alert-info">
+        {{"GENERAL.NOT_ALLOWED" |translate}}
+      </div>
       <label for="form_level">{{"USER.FORM.LEVEL" |translate}}</label>
       <select formControlName="level" class="form-control" id="form_level">
         <option *ngFor="let level of levels" [value]="level?.value">{{level?.name}}</option>
@@ -22,13 +31,56 @@
       <small class="form-text text-muted">{{"USER.FORM.LEVEL_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
-      <label for="form_level">{{"USER.FORM.TAG" |translate}}</label>
-      <tag-input formControlName="extra" [ngModel]="itemsAsObjects"></tag-input>
-      <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
-    </div>
+      <label>{{"USER.FORM.IMAGES" |translate}}</label>
+      <ng-template #itemTemplate let-fileItem="fileItem" let-uploadProgress="uploadProgress">
+        <!--        {{fileItem | json}}-->
+        <!--        <button  (click)="uploader.removeFile(fileItem)">Remove</button>-->
+      </ng-template>
+      <div class="col-12 row m-0 p-0">
+        <div class="col-4 pl-0 pt-0 pb-1 pr-1" [ngClass]="{'image-loading':img?.loading}" *ngFor="let img of images">
+          <span class="icon-close" (click)="removeImage(img)">
+            <fa-icon [icon]="faTimes"></fa-icon>
+          </span>
+          <img *ngIf="img?.src" class="img-gallery" [src]="img?.src" alt="">
+          <img *ngIf="img?.small" class="img-gallery" [src]="img?.small" alt="">
+        </div>
+        <div class="col-4 p-0">
+          <ngx-file-picker
+            class="customPicker"
+            (fileAdded)="addImage($event)"
+            (uploadSuccess)="uploadImage($event)"
+            (uploadFail)="uploadImageFail($event)"
+            [adapter]="adapter"
+            [itemTemplate]="itemTemplate">
+            <div class="dropzoneTemplate text-center">
+              <fa-icon [icon]="faImage" size="2x"></fa-icon>
+              <!--              <button type="button" class="btn btn-sm btn-outline-info">{{"GENERAL.UPLOAD" | translate}}</button>-->
+            </div>
+          </ngx-file-picker>
 
-    <div class="text-center">
-      <button [disabled]="!form.valid" class="btn btn-info btn-block">{{"USER.FORM.SEND" |translate}}</button>
+        </div>
+      </div>
+      <small class="form-text text-muted">{{"USER.FORM.IMAGES_PLACEHOLDER" |translate}}</small>
     </div>
+    <div class="d-flex">
+      <div class="w-75">
+        <button [appLoadingButton]="loading" [dis]="!form.valid"
+                [label]="'GENERAL.LOADING' | translate"
+                class="btn btn-info w-100">
+          ENVIAR
+        </button>
+      </div>
+      <div class="w-25 pl-1">
+        <button [disabled]="!form.valid"
+                (click)="trash()"
+                type="button"
+                class="btn btn-danger  w-100">
+          <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <!--    <div class="text-center">-->
+    <!--      <button [disabled]="!form.valid" class="btn btn-info btn-block">{{"USER.FORM.SEND" |translate}}</button>-->
+    <!--    </div>-->
   </form>
 </div>

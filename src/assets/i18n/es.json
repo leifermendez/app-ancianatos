@@ -6,7 +6,8 @@
   },
   "GENERAL": {
     "LOADING": "Cargando",
-    "UPLOAD": "Agregar imagenes"
+    "UPLOAD": "Agregar imagenes",
+    "NOT_ALLOWED": "No tienes permisos para realizar esta acción"
   },
   "AUTH": {
   },
@@ -23,7 +24,9 @@
       "TAG": "Etiquetas",
       "TAG_PLACEHOLDER": "Agregar etiquetas",
       "AVATAR": "Avatar",
-      "SEND": "Enviar"
+      "SEND": "Enviar",
+      "IMAGES": "Fotos",
+      "IMAGES_PLACEHOLDER": "Fotos"
     }
   },
   "INSTITUTIONS": {
