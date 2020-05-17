@@ -42,7 +42,9 @@
       "ADDRESS": "Dirección",
       "ADDRESS_PLACEHOLDER": "Dirección",
       "DESCRIPTION": "Descripcion",
-      "DESCRIPTION_PLACEHOLDER": "Descripcion"
+      "DESCRIPTION_PLACEHOLDER": "Descripcion",
+      "IMAGES": "Fotos",
+      "IMAGES_PLACEHOLDER": "Fotos"
     }
   },
   "404": {

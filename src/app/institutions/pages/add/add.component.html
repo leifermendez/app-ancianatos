@@ -41,22 +41,36 @@
       <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
-      <label>{{"INSTITUTIONS.FORM.TAG" |translate}}</label>
-      <ng-template  #itemTemplate  let-fileItem="fileItem" let-uploadProgress="uploadProgress">
-        {{fileItem | json}}
-        <button  (click)="uploader.removeFile(fileItem)">Remove</button>
+      <label>{{"INSTITUTIONS.FORM.IMAGES" |translate}}</label>
+      <ng-template #itemTemplate let-fileItem="fileItem" let-uploadProgress="uploadProgress">
+        <!--        {{fileItem | json}}-->
+        <!--        <button  (click)="uploader.removeFile(fileItem)">Remove</button>-->
       </ng-template>
-      <ngx-file-picker
-        class="customPicker"
-        [adapter]="adapter"
-        [itemTemplate]="itemTemplate"
-      >
-        <div class="dropzoneTemplate text-center">
-          <button type="button" class="btn btn-sm btn-outline-info">{{"GENERAL.UPLOAD" | translate}}</button>
+      <div class="col-12 row m-0 p-0">
+        <div class="col-4 pl-0 pt-0 pb-1 pr-1" [ngClass]="{'image-loading':img?.loading}" *ngFor="let img of images">
+          <span class="icon-close" (click)="removeImage(img)">
+            <fa-icon [icon]="faTimes"></fa-icon>
+          </span>
+          <img *ngIf="img?.src" class="img-gallery" [src]="img?.src" alt="">
+          <img *ngIf="img?.small" class="img-gallery" [src]="img?.small" alt="">
         </div>
-      </ngx-file-picker>
+        <div class="col-4 p-0">
+          <ngx-file-picker
+            class="customPicker"
+            (fileAdded)="addImage($event)"
+            (uploadSuccess)="uploadImage($event)"
+            (uploadFail)="uploadImageFail($event)"
+            [adapter]="adapter"
+            [itemTemplate]="itemTemplate">
+            <div class="dropzoneTemplate text-center">
+              <fa-icon [icon]="faImage" size="2x"></fa-icon>
+              <!--              <button type="button" class="btn btn-sm btn-outline-info">{{"GENERAL.UPLOAD" | translate}}</button>-->
+            </div>
+          </ngx-file-picker>
 
-      <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
+        </div>
+      </div>
+      <small class="form-text text-muted">{{"INSTITUTIONS.FORM.IMAGES_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="d-flex">
       <div class="w-75">
