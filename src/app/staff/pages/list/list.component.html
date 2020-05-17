@@ -1,0 +1,24 @@
+<app-header [label]="'HEADER.STAFF' | translate" [icon]="faUserNurse"></app-header>
+<app-logged-user></app-logged-user>
+<div class="list-user p-2 pl-3 pr-3">
+  <div class="text-right mb-2">
+    <button [routerLink]="['/','staff','add']" class="btn btn-outline-secondary btn-sm">
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </button>
+  </div>
+  <div class="form-group">
+    <input autocomplete="off" type="text" [(ngModel)]="src" (ngModelChange)="search($event)" class="form-control src-input" id="src"
+           placeholder="Buscar...">
+  </div>
+  <app-loading-block *ngIf="loading"></app-loading-block>
+  <ul *ngIf="!loading">
+    <li [routerLink]="['/','staff','add',datum?.id]" *ngFor="let datum of data">
+      <div class="d-flex justify-content-between">
+        <b>{{datum?.name}} </b> <small class="text-muted">{{datum?.level}}</small>
+      </div>
+      <div>
+        <small>{{datum?.address}}</small>
+      </div>
+    </li>
+  </ul>
+</div>

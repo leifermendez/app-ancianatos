@@ -168,7 +168,7 @@ export class ShareService {
         text,
       }).then(a => {
         resolve(true);
-      });
+      }).catch(e => console.log(e));
     });
   };
 

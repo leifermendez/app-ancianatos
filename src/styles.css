@@ -7,11 +7,13 @@ body {
   font-weight: 400;
   color: #222;
 }
-.customPicker{
+
+.customPicker {
   /*width: 25% !important;*/
   height: 6rem !important;
   overflow: hidden !important;
 }
+
 .customPicker .file-drop-wrapper {
   padding-top: 0 !important;
 }
@@ -28,7 +30,7 @@ body {
   border-radius: 3px !important;
 }
 
-.files-preview-wrapper{
+.files-preview-wrapper {
   display: none;
 }
 
@@ -39,14 +41,15 @@ body {
   font-weight: 500 !important;
 }
 
-.img-gallery{
+.img-gallery {
   width: 100%;
   height: 6rem;
   object-fit: cover;
   border: solid 1px #eaeaea;
   border-radius: 3px;
 }
-.image-loading:before{
+
+.image-loading:before {
   content: "";
   position: absolute;
   top: 0;
@@ -59,7 +62,8 @@ body {
   background-repeat: no-repeat;
   background-image: url("./assets/images/loading-color.svg");
 }
-.icon-close{
+
+.icon-close {
   position: absolute;
   top: -8px;
   background: #e4e4e4;
@@ -67,4 +71,22 @@ body {
   border-radius: 23px;
   width: 1.5rem;
   height: 1.5rem;
+}
+
+tag-input tag {
+  width: 100%;
+  border-radius: 3px !important;
+  line-height: 30px !important;
+}
+
+tag-input tag div {
+  width: 100% !important;
+}
+
+tag-input-form {
+  width: 100% !important;
+}
+
+tag-input-form > form > input {
+  width: 100%;
 }

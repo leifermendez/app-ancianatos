@@ -92,6 +92,9 @@ export class RestService {
         case 402:
           this.sharedService.alert(error, e.errors.msg);
           break;
+        case 403:
+          this.sharedService.alert(error, '');
+          break;
         case 400:
           if (e.errors.msg === 'parameter_missing') {
             this.sharedService.alert(error, parameterMissing);

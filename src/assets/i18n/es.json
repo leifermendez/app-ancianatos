@@ -2,7 +2,9 @@
   "HEADER": {
     "TITLE": "My App",
     "USER": "User",
-    "INSTITUTIONS": "Instituciones"
+    "INSTITUTIONS": "Instituciones",
+    "STAFF": "Personal",
+    "PATIENTS": "Pacientes"
   },
   "GENERAL": {
     "LOADING": "Cargando",
@@ -27,6 +29,28 @@
       "SEND": "Enviar",
       "IMAGES": "Fotos",
       "IMAGES_PLACEHOLDER": "Fotos"
+    }
+  },
+  "STAFF": {
+    "FORM": {
+      "NAME": "Nombre",
+      "NAME_PLACEHOLDER": "Ingresa nombre",
+      "LAST_NAME": "Apellidos",
+      "LAST_NAME_PLACEHOLDER": "Ingresa Apellidos",
+      "PHONE": "Telefono",
+      "PHONE_PLACEHOLDER": "Ingresa Telefono",
+      "EMAIL": "Email",
+      "EMAIL_PLACEHOLDER": "Ingresa el mail",
+      "LEVEL": "Level",
+      "LEVEL_PLACEHOLDER": "Selecciona un nivel",
+      "TAG": "Etiquetas",
+      "TAG_PLACEHOLDER": "Agregar etiquetas",
+      "AVATAR": "Avatar",
+      "SEND": "Enviar",
+      "IMAGES": "Fotos",
+      "IMAGES_PLACEHOLDER": "Fotos",
+      "ADDRESS": "Dirección",
+      "ADDRESS_PLACEHOLDER": "Dirección"
     }
   },
   "INSTITUTIONS": {

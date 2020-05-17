@@ -1,37 +1,45 @@
-<app-header label="User" [icon]="faUser"></app-header>
+<app-header [label]="'HEADER.STAFF' | translate" [icon]="faUserNurse"></app-header>
 <app-logged-user></app-logged-user>
 <div class="edit-add-user p-2 pl-2 pr-2 ml-3 mr-3">
-  <div *ngIf="lvl !=='admin'" class="alert alert-info">
-    {{"GENERAL.NOT_ALLOWED" |translate}}
-  </div>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="form_name">{{"USER.FORM.NAME" |translate}}</label>
+      <label for="form_name">{{"STAFF.FORM.NAME" |translate}}</label>
       <input type="text" formControlName="name" class="form-control" id="form_name"
              placeholder="">
-      <small class="form-text text-muted">{{"USER.FORM.NAME_PLACEHOLDER" |translate}}</small>
+      <small class="form-text text-muted">{{"STAFF.FORM.NAME_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
-      <label for="form_email">{{"USER.FORM.EMAIL" |translate}}</label>
-      <input readonly type="email" formControlName="email" class="form-control" id="form_email"
+      <label for="form_last_name">{{"STAFF.FORM.LAST_NAME" |translate}}</label>
+      <input type="text" formControlName="last_name" class="form-control" id="form_last_name"
              placeholder="">
-      <small class="form-text text-muted">{{"USER.FORM.EMAIL_PLACEHOLDER" |translate}}</small>
+      <small class="form-text text-muted">{{"STAFF.FORM.LAST_NAME_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
-      <label>{{"USER.FORM.TAG" |translate}}</label>
+      <label for="form_phone">{{"STAFF.FORM.PHONE" |translate}}</label>
+      <input type="phone" formControlName="phone" class="form-control" id="form_phone"
+             placeholder="">
+      <small class="form-text text-muted">{{"STAFF.FORM.PHONE_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label for="form_email">{{"STAFF.FORM.EMAIL" |translate}}</label>
+      <input type="email" formControlName="email" class="form-control" id="form_email"
+             placeholder="">
+      <small class="form-text text-muted">{{"STAFF.FORM.EMAIL_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label for="form_address">{{"STAFF.FORM.ADDRESS" |translate}}</label>
+      <input type="text" formControlName="address" class="form-control" id="form_address"
+             placeholder="">
+      <small class="form-text text-muted">{{"STAFF.FORM.ADDRESS_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label>{{"STAFF.FORM.TAG" |translate}}</label>
       <tag-input [identifyBy]="'key'" [displayBy]="'value'" [placeholder]="''" [(ngModel)]="itemsAsObjects"
                  [ngModelOptions]="{standalone: true}"></tag-input>
-      <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
+      <small class="form-text text-muted">{{"STAFF.FORM.TAG_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
-      <label for="form_level">{{"USER.FORM.LEVEL" |translate}}</label>
-      <select formControlName="level" class="form-control" id="form_level">
-        <option *ngFor="let level of levels" [value]="level?.value">{{level?.name}}</option>
-      </select>
-      <small class="form-text text-muted">{{"USER.FORM.LEVEL_PLACEHOLDER" |translate}}</small>
-    </div>
-    <div class="form-group">
-      <label>{{"USER.FORM.IMAGES" |translate}}</label>
+      <label>{{"STAFF.FORM.IMAGES" |translate}}</label>
       <ng-template #itemTemplate let-fileItem="fileItem" let-uploadProgress="uploadProgress">
         <!--        {{fileItem | json}}-->
         <!--        <button  (click)="uploader.removeFile(fileItem)">Remove</button>-->
@@ -60,9 +68,9 @@
 
         </div>
       </div>
-      <small class="form-text text-muted">{{"USER.FORM.IMAGES_PLACEHOLDER" |translate}}</small>
+      <small class="form-text text-muted">{{"STAFF.FORM.IMAGES_PLACEHOLDER" |translate}}</small>
     </div>
-    <div class="d-flex" *ngIf="lvl ==='admin'">
+    <div class="d-flex">
       <div class="w-75">
         <button [appLoadingButton]="loading" [dis]="!form.valid"
                 [label]="'GENERAL.LOADING' | translate"
@@ -80,7 +88,7 @@
       </div>
     </div>
     <!--    <div class="text-center">-->
-    <!--      <button [disabled]="!form.valid" class="btn btn-info btn-block">{{"USER.FORM.SEND" |translate}}</button>-->
+    <!--      <button [disabled]="!form.valid" class="btn btn-info btn-block">{{"STAFF.FORM.SEND" |translate}}</button>-->
     <!--    </div>-->
   </form>
 </div>

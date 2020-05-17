@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'Staff',
       icon: this.faUserNurse,
-      source: ['/']
+      source: ['/', 'staff']
     },
     {
       name: 'Patients',
