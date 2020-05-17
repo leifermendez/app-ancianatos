@@ -45,29 +45,13 @@ export class RestService {
 
   checkSession = (verify = false, redirect = true, extra: any = {}) => {
     return new Promise((resolve, reject) => {
-        if (!this.router.url.includes('oauth')) {
-          this.cookieService.set('redirect', this.router.url, environment.daysTokenExpire, '/');
-        }
-        if (verify) {
-          this.get('token', false).subscribe(data => {
-              this.cookieService.set('session', data.token, environment.daysTokenExpire, '/');
-              resolve(data.token);
-            },
-            e => {
-              if (redirect) {
-                this.router.navigate(['/', 'oauth', 'register'], {queryParams: extra.queryParameters});
-              }
-              reject(false);
-            });
+        if (this.cookieService.check('session')) {
+          resolve(true);
         } else {
-          if (this.cookieService.check('session')) {
-            resolve(true);
-          } else {
-            if (redirect) {
-              this.router.navigate(['/', 'oauth', 'register'], {queryParams: extra.queryParameters});
-            }
-            reject(false);
+          if (redirect) {
+            this.router.navigate(['/', 'auth', 'login']);
           }
+          reject(false);
         }
       }
     );

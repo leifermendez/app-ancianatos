@@ -1,0 +1,44 @@
+<app-header [label]="'HEADER.INSTITUTIONS' | translate" [icon]="faHome"></app-header>
+<app-logged-user></app-logged-user>
+<div class="edit-add-user p-2 pl-2 pr-2 ml-3 mr-3">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="form_name">{{"INSTITUTIONS.FORM.NAME" |translate}}</label>
+      <input type="text" formControlName="name" class="form-control" id="form_name"
+             placeholder="">
+      <small class="form-text text-muted">{{"INSTITUTIONS.FORM.NAME_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label for="form_address">{{"INSTITUTIONS.FORM.ADDRESS" |translate}}</label>
+      <input type="text" formControlName="address" class="form-control" id="form_address"
+             placeholder="">
+      <small class="form-text text-muted">{{"INSTITUTIONS.FORM.ADDRESS_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label for="form_description">{{"INSTITUTIONS.FORM.DESCRIPTION" |translate}}</label>
+      <!--      <input type="text"  class="form-control" id="form_description"-->
+      <!--             placeholder="">-->
+      <textarea name="" id="form_description" formControlName="description" class="form-control" cols="30"
+                rows="3"></textarea>
+      <small class="form-text text-muted">{{"INSTITUTIONS.FORM.DESCRIPTION_PLACEHOLDER" |translate}}</small>
+    </div>
+    <!--        <div class="form-group">-->
+    <!--          <label for="form_level">{{"USER.FORM.LEVEL" |translate}}</label>-->
+    <!--          <select formControlName="level" class="form-control" id="form_level">-->
+    <!--            <option *ngFor="let level of levels" [value]="level?.value">{{level?.name}}</option>-->
+    <!--          </select>-->
+    <!--          <small class="form-text text-muted">{{"USER.FORM.LEVEL_PLACEHOLDER" |translate}}</small>-->
+    <!--        </div>-->
+    <div class="form-group">
+      <label>{{"INSTITUTIONS.FORM.TAG" |translate}}</label>
+      <tag-input [placeholder]="''" [(ngModel)]="itemsAsObjects"
+                 [ngModelOptions]="{standalone: true}"></tag-input>
+      <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
+    </div>
+    <button [appLoadingButton]="loading" [dis]="!form.valid"
+            [label]="'GENERAL.LOADING' | translate"
+            class="btn btn-info btn-block">
+      ENVIAR
+    </button>
+  </form>
+</div>

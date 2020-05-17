@@ -1,6 +1,11 @@
 {
   "HEADER": {
-    "TITLE": "My App"
+    "TITLE": "My App",
+    "USER": "User",
+    "INSTITUTIONS": "Instituciones"
+  },
+  "GENERAL": {
+    "LOADING": "Cargando"
   },
   "AUTH": {
   },
@@ -18,6 +23,24 @@
       "TAG_PLACEHOLDER": "Agregar etiquetas",
       "AVATAR": "Avatar",
       "SEND": "Enviar"
+    }
+  },
+  "INSTITUTIONS": {
+    "FORM": {
+      "NAME": "Nombre",
+      "NAME_PLACEHOLDER": "Ingresa nombre",
+      "EMAIL": "Email",
+      "EMAIL_PLACEHOLDER": "Ingresa el mail",
+      "LEVEL": "Level",
+      "LEVEL_PLACEHOLDER": "Selecciona un nivel",
+      "TAG": "Etiquetas",
+      "TAG_PLACEHOLDER": "Agregar etiquetas",
+      "AVATAR": "Avatar",
+      "SEND": "Enviar",
+      "ADDRESS": "Dirección",
+      "ADDRESS_PLACEHOLDER": "Dirección",
+      "DESCRIPTION": "Descripcion",
+      "DESCRIPTION_PLACEHOLDER": "Descripcion"
     }
   },
   "404": {

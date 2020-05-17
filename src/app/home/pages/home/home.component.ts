@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'Institutions',
       icon: this.faHome,
-      source: ['/']
+      source: ['/', 'institutions']
     },
     {
       name: 'Staff',

@@ -8,18 +8,20 @@ import {HomeModule} from '../home/home.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TagInputModule} from 'ngx-chips';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
   declarations: [ListComponent, AddComponent],
-  imports: [
-    CommonModule,
-    TagInputModule,
-    UserRoutingModule,
-    HomeModule,
-    TranslateModule,
-    ReactiveFormsModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        TagInputModule,
+        UserRoutingModule,
+        HomeModule,
+        TranslateModule,
+        ReactiveFormsModule,
+        FormsModule,
+        FontAwesomeModule
+    ]
 })
 export class UserModule { }

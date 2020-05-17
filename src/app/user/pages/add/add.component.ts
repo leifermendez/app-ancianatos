@@ -27,6 +27,7 @@ export class AddComponent implements OnInit {
       select: false
     }
   ];
+
   public itemsAsObjects = [{value: 0, display: 'Angular'}, {value: 1, display: 'React'}];
 
   constructor(private formBuilder: FormBuilder) {

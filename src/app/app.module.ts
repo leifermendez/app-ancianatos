@@ -15,6 +15,7 @@ import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
 import {Page404pageComponent} from './components/page404page/page404page.component';
 import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
+import { LoadingButtonDirective } from './loading-button.directive';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {

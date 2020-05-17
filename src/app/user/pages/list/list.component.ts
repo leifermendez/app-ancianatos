@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {faUser} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faPlus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list',
@@ -8,6 +8,7 @@ import {faUser} from '@fortawesome/free-solid-svg-icons';
 })
 export class ListComponent implements OnInit {
   faUser = faUser;
+  faPlus = faPlus;
   public data = [
     {
       id: '2',

@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
+
+    this.rest.checkSession(true, true).then(a => this.router.navigate(['/']));
   }
 
   onSubmit = () => {

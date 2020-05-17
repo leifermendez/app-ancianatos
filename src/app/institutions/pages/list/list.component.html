@@ -1,8 +1,8 @@
-<app-header [label]="'HEADER.USER' | translate" [icon]="faUser"></app-header>
+<app-header [label]="'HEADER.INSTITUTIONS' | translate" [icon]="faHome"></app-header>
 <app-logged-user></app-logged-user>
 <div class="list-user p-2 pl-3 pr-3">
   <div class="text-right mb-2">
-    <button [routerLink]="['/','user','add']" class="btn btn-outline-secondary btn-sm">
+    <button [routerLink]="['/','institutions','add']" class="btn btn-outline-secondary btn-sm">
       <fa-icon [icon]="faPlus"></fa-icon>
     </button>
   </div>
@@ -15,7 +15,7 @@
         <b>{{datum?.name}} </b> <small class="text-muted">{{datum?.level}}</small>
       </div>
       <div>
-        <small>{{datum?.email}}</small>
+        <small>{{datum?.address}}</small>
       </div>
     </li>
   </ul>
