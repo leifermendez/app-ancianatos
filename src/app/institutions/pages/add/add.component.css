@@ -16,3 +16,14 @@
 input.ng-touched.ng-invalid {
   border: solid 1px #ff756b;
 }
+.border-bottom-section{
+  border-bottom: solid 1px #fafafa;
+}
+.badge {
+  font-size: 90%;
+  background-color: #00BCD4;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 3px;
+  padding: .35rem;
+}

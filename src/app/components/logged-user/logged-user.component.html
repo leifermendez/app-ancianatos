@@ -2,14 +2,22 @@
   <!--  <div class="alert alert-info m-0">-->
   <!--    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, minus!-->
   <!--  </div>-->
-
   <div class="d-flex p-2 block justify-content-between">
-    <div class="text-center">
-      <img class="avatar" src="https://picsum.photos/536/354" alt="">
+    <div class="text-center d-flex ">
+      <img class="avatar" [src]="data?.avatar" alt="">
+      <div class="pl-1 pr-1 text-left ">
+        <div>
+          <div>{{data?.name}}</div>
+          <div class="text-muted">{{data?.level}}</div>
+        </div>
+
+      </div>
     </div>
-    <div class="pl-1 pr-1 text-right">
-      <div>Leifer Mendez</div>
-      <div>Admin</div>
+
+    <div class="pl-1">
+      <button class="btn btn-link-dark bg-transparent">
+        <fa-icon [icon]="faSignOutAlt"></fa-icon>
+      </button>
     </div>
   </div>
 </div>

@@ -21,6 +21,11 @@ export class AuthGService {
           res.access_token,
           environment.daysTokenExpire,
           '/');
+        this.cookieService.set(
+          'user',
+          JSON.stringify(res.user),
+          environment.daysTokenExpire,
+          '/');
         resolve(res);
       }, error => {
         reject(error);

@@ -1,6 +1,11 @@
 <app-header [label]="'HEADER.INSTITUTIONS' | translate" [icon]="faHome"></app-header>
 <app-logged-user></app-logged-user>
 <div class="edit-add-user p-2 pl-2 pr-2 ml-3 mr-3">
+  <div class="d-flex pt-0 pb-1 mb-2 pl-0 pr-0 border-bottom-section">
+    <span class="badge badge-info mr-2" (click)="report()">
+      <fa-icon [icon]="faDownload"></fa-icon>
+      {{"INSTITUTIONS.REPORT" |translate}}</span>
+  </div>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="form_name">{{"INSTITUTIONS.FORM.NAME" |translate}}</label>
@@ -31,14 +36,27 @@
     <!--        </div>-->
     <div class="form-group">
       <label>{{"INSTITUTIONS.FORM.TAG" |translate}}</label>
-      <tag-input [placeholder]="''" [(ngModel)]="itemsAsObjects"
+      <tag-input [identifyBy]="'key'" [displayBy]="'value'" [placeholder]="''" [(ngModel)]="itemsAsObjects"
                  [ngModelOptions]="{standalone: true}"></tag-input>
       <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
     </div>
-    <button [appLoadingButton]="loading" [dis]="!form.valid"
-            [label]="'GENERAL.LOADING' | translate"
-            class="btn btn-info btn-block">
-      ENVIAR
-    </button>
+    <div class="d-flex">
+      <div class="w-75">
+        <button [appLoadingButton]="loading" [dis]="!form.valid"
+                [label]="'GENERAL.LOADING' | translate"
+                class="btn btn-info w-100">
+          ENVIAR
+        </button>
+      </div>
+      <div class="w-25 pl-1">
+        <button [disabled]="!form.valid"
+                (click)="trash()"
+                type="button"
+                class="btn btn-danger  w-100">
+          <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+      </div>
+    </div>
+
   </form>
 </div>

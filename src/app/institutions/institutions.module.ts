@@ -1,19 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { InstitutionsRoutingModule } from './institutions-routing.module';
-import { AddComponent } from './pages/add/add.component';
-import { ListComponent } from './pages/list/list.component';
+import {InstitutionsRoutingModule} from './institutions-routing.module';
+import {AddComponent} from './pages/add/add.component';
+import {ListComponent} from './pages/list/list.component';
 import {HomeModule} from '../home/home.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
 import {TagInputModule} from 'ngx-chips';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {LoadingButtonDirective} from '../loading-button.directive';
+import {LoadingBlockComponent} from '../components/loading-block/loading-block.component';
 
 
 @NgModule({
-  declarations: [AddComponent, ListComponent, LoadingButtonDirective],
+  declarations: [AddComponent, ListComponent, LoadingButtonDirective, LoadingBlockComponent],
   imports: [
     CommonModule,
     InstitutionsRoutingModule,
@@ -25,4 +26,5 @@ import {LoadingButtonDirective} from '../loading-button.directive';
     FormsModule
   ]
 })
-export class InstitutionsModule { }
+export class InstitutionsModule {
+}

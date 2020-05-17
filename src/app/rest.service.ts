@@ -132,7 +132,7 @@ export class RestService {
     }
   }
 
-  patch(path = '', body = {}, toast = true): Observable<any> {
+  put(path = '', body = {}, toast = true): Observable<any> {
     try {
       return this.http.patch(`${this.url}/${path}`, body, {headers: this.parseHeader()})
         .pipe(
@@ -172,4 +172,23 @@ export class RestService {
     }
   }
 
+  delete(path = '', toast = true): Observable<any> {
+    try {
+      return this.http.delete(`${this.url}/${path}`, {headers: this.parseHeader()})
+        .pipe(
+          catchError((e: any) => {
+            if (toast) {
+              this.sharedService.showError('Error', e.statusText);
+            }
+            this.handleError(e.status, e.statusText);
+            return throwError({
+              status: e.status,
+              statusText: e.statusText,
+            });
+          }),
+        );
+    } catch (e) {
+
+    }
+  }
 }

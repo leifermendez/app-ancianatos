@@ -359,4 +359,21 @@ export class ShareService {
     }
   };
 
+  public parsePageUrl = (url: string) => {
+    try {
+      console.log(url);
+      return url.split('?').reverse().find(b => true)
+        .split('=').reverse().find(c => true);
+    } catch (e) {
+      return null;
+    }
+  };
+
+  public wrapperDataExtra = (data: any) => {
+    try {
+      return Object.keys(data.extra).map((k) => data.extra[k]);
+    } catch (e) {
+      return null;
+    }
+  };
 }

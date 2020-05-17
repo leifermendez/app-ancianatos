@@ -16,6 +16,7 @@ import {Page404pageComponent} from './components/page404page/page404page.compone
 import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
 import { LoadingButtonDirective } from './loading-button.directive';
+import { LoadingBlockComponent } from './components/loading-block/loading-block.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -29,7 +30,7 @@ export function playerFactory() {
 @NgModule({
   declarations: [
     AppComponent,
-    Page404pageComponent,
+    Page404pageComponent
   ],
   imports: [
     BrowserModule,
