@@ -15,10 +15,12 @@ import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
 import {Page404pageComponent} from './components/page404page/page404page.component';
 import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
-import { LoadingButtonDirective } from './loading-button.directive';
-import { LoadingBlockComponent } from './components/loading-block/loading-block.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormlyModule } from '@ngx-formly/core';
+import {LoadingButtonDirective} from './loading-button.directive';
+import {LoadingBlockComponent} from './components/loading-block/loading-block.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {FormlyModule} from '@ngx-formly/core';
+import {ModalPhotoComponent} from './components/modal-photo/modal-photo.component';
+import {TimeagoModule} from 'ngx-timeago';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -32,7 +34,8 @@ export function playerFactory() {
 @NgModule({
   declarations: [
     AppComponent,
-    Page404pageComponent
+    Page404pageComponent,
+    ModalPhotoComponent
   ],
   imports: [
     BrowserModule,
@@ -52,11 +55,12 @@ export function playerFactory() {
     BrowserAnimationsModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    FormlyModule.forRoot()
+    FormlyModule.forRoot(),
+    TimeagoModule
   ],
   providers: [],
-  exports: [
-  ],
+  exports: [],
+  entryComponents: [ModalPhotoComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

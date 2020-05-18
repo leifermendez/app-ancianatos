@@ -1,0 +1,17 @@
+<div class="modal-body p-0 m-0">
+  <div class="wrapper-photo">
+    <img class="image-photo"
+         [src]="data?.large"
+         alt="">
+  </div>
+</div>
+<div class="modal-footer justify-content-start modal-footer-image pt-2 pl-1 pr-1 pb-2">
+  <div>
+    <div>
+      <small timeago [date]="1553683912689"></small>
+    </div>
+    <div class="mt-1">
+      <b><small>{{"PATIENTS.PHOTO.AUTHOR" |translate}}:</small></b> <br> {{data?.user?.name}}
+    </div>
+  </div>
+</div>

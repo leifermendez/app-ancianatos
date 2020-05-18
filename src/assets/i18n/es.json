@@ -78,6 +78,9 @@
     }
   },
   "PATIENTS": {
+    "PHOTO": {
+      "AUTHOR": "Foto tomada por"
+    },
     "FORM": {
       "NAME": "Nombre",
       "NAME_PLACEHOLDER": "Ingresa nombre",

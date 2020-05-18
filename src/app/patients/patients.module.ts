@@ -12,6 +12,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {TagInputModule} from 'ngx-chips';
 import {FilePickerModule} from 'ngx-awesome-uploader';
 import {ModalModule} from 'ngx-bootstrap/modal';
+import {TimeagoModule} from 'ngx-timeago';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
     FontAwesomeModule,
     SharedModule,
     ModalModule.forRoot(),
+    TimeagoModule.forRoot(),
     FormsModule,
     TranslateModule,
     ReactiveFormsModule,

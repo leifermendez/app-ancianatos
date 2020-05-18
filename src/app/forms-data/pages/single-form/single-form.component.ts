@@ -65,7 +65,7 @@ export class SingleFormComponent implements OnInit {
 
         this.title = title;
         this.fields = scheme;
-        this.model = retrieved.values;
+        this.model = (retrieved) ? retrieved.values : {};
         this.retrieved = retrieved;
         this.loading = false;
       }, error => {

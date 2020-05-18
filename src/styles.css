@@ -110,7 +110,10 @@ tag-input-form > form > input {
   position: absolute;
   filter: blur(2px);
   z-index: -9;
-  background-image: url("https://images.unsplash.com/photo-1587613989342-7e21016caff3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+  background-position: center;
+  background-size: cover;
+  background-color: white;
+  background-image: var(--images-background);
 }
 
 .wrapper-photo:after {
@@ -135,8 +138,14 @@ tag-input-form > form > input {
   max-height: 60vh;
   object-fit: contain;
 }
-.modal-footer-image{
+
+.modal-footer-image {
   font-size: .8rem;
   color: white;
-  background-color: rgb(124, 125, 126);
+  background-color: rgb(75, 75, 75);
+  outline: rgb(75, 75, 75) solid 1px;
+}
+
+:root {
+  --images-background: none;
 }

@@ -8,6 +8,7 @@ import {HttpClient} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import {faCamera, faDownload, faHome, faImage, faTimes, faTrash, faUserShield} from '@fortawesome/free-solid-svg-icons';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+import {ModalPhotoComponent} from '../../../components/modal-photo/modal-photo.component';
 
 @Component({
   selector: 'app-add',
@@ -142,8 +143,22 @@ export class AddComponent implements OnInit {
   };
 
 
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template,
-      Object.assign({}, {class: 'photo-viewer'}));
+  // openModal(template: TemplateRef<any>, data: any) {
+  //   this.modalRef = this.modalService.show(template,
+  //     Object.assign({}, {class: 'photo-viewer'}));
+  //   this.modalRef.content.closeBtnName = 'Close';
+  // }
+
+
+  openModal(data) {
+    const initialState = {
+      data
+    };
+    this.modalRef = this.modalService.show(
+      ModalPhotoComponent,
+      Object.assign({initialState}, {
+        class: 'photo-viewer'
+      })
+    );
   }
 }

@@ -14,7 +14,7 @@
   <ul *ngIf="!loading">
     <li [routerLink]="['/','patients','add',datum?.id]" *ngFor="let datum of data">
       <div class="d-flex justify-content-between">
-        <b>{{datum?.name}} </b> <small class="text-muted">{{datum?.level}}</small>
+        <b>{{datum?.name}} {{datum?.last_name}} </b> <small class="text-muted">{{datum?.level}}</small>
       </div>
       <div>
         <small>{{datum?.address}}</small>
