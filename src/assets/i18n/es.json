@@ -50,7 +50,9 @@
       "IMAGES": "Fotos",
       "IMAGES_PLACEHOLDER": "Fotos",
       "ADDRESS": "Domicilio",
-      "ADDRESS_PLACEHOLDER": "Ingresa el Domicilio"
+      "ADDRESS_PLACEHOLDER": "Ingresa el Domicilio",
+      "AGE": "Edad",
+      "AGE_PLACEHOLDER": "Ingresa el edad"
     }
   },
   "INSTITUTIONS": {

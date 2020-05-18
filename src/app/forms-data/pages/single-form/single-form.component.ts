@@ -49,7 +49,7 @@ export class SingleFormComponent implements OnInit {
       forms_id: this.id,
       target_id: this.target,
     }).subscribe(res => {
-
+      window.history.back();
     }, error => {
     });
   }
@@ -75,7 +75,6 @@ export class SingleFormComponent implements OnInit {
 
   parseSelect = (data: any, inside: any) => {
     const forms = data.filter(p => p.type === 'select');
-    console.log(forms);
     inside.forEach((value, key, map) => {
       const parentKey = value.find(l => true);
       const parentValue = value.reverse().find(l => true);

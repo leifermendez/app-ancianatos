@@ -49,6 +49,7 @@ export class AddComponent implements OnInit {
       last_name: ['', Validators.required],
       phone: ['', Validators.required],
       address: ['', Validators.required],
+      age: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       extra: [''],
       images: [''],
