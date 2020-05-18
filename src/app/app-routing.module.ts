@@ -26,6 +26,11 @@ const routes: Routes = [
     canActivate: [GuardGuard]
   },
   {
+    path: 'forms',
+    loadChildren: './forms-data/forms-data.module#FormsDataModule',
+    canActivate: [GuardGuard]
+  },
+  {
     path: 'patients',
     loadChildren: './patients/patients.module#PatientsModule',
     canActivate: [GuardGuard]
