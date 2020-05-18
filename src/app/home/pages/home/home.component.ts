@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'Patients',
       icon: this.faUserShield,
-      source: ['/']
+      source: ['/', 'patients']
     }
   ];
 
