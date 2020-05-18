@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {FPickerAdapter} from '../../../FPickerAdapter';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RestService} from '../../../rest.service';
@@ -7,6 +7,7 @@ import {ShareService} from '../../../share.service';
 import {HttpClient} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import {faCamera, faDownload, faHome, faImage, faTimes, faTrash, faUserShield} from '@fortawesome/free-solid-svg-icons';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-add',
@@ -14,6 +15,7 @@ import {faCamera, faDownload, faHome, faImage, faTimes, faTrash, faUserShield} f
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
+  modalRef: BsModalRef;
   faUserShield = faUserShield;
   faHome = faHome;
   faDownload = faDownload;
@@ -34,6 +36,7 @@ export class AddComponent implements OnInit {
               private router: Router,
               private shared: ShareService,
               private http: HttpClient,
+              private modalService: BsModalService,
               private cookie: CookieService,
               private route: ActivatedRoute) {
   }
@@ -137,4 +140,10 @@ export class AddComponent implements OnInit {
   removeImage = (img) => {
     this.images = this.images.filter(a => a.id !== img.id);
   };
+
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template,
+      Object.assign({}, {class: 'photo-viewer'}));
+  }
 }

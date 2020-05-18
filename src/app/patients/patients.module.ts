@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
 import {TagInputModule} from 'ngx-chips';
 import {FilePickerModule} from 'ngx-awesome-uploader';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {FilePickerModule} from 'ngx-awesome-uploader';
     HomeModule,
     FontAwesomeModule,
     SharedModule,
+    ModalModule.forRoot(),
     FormsModule,
     TranslateModule,
     ReactiveFormsModule,

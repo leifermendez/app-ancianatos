@@ -90,10 +90,53 @@ tag-input-form {
 tag-input-form > form > input {
   width: 100%;
 }
+
 .form-control {
   border: solid 0px white;
   border-radius: 0px;
   font-size: .8rem;
   background-color: rgb(250, 250, 250);
   border-bottom: solid 1px #dddddd;
+}
+
+.photo-viewer {
+  background-color: transparent;
+}
+
+.wrapper-photo:before {
+  width: 100%;
+  height: 100%;
+  content: "f";
+  position: absolute;
+  filter: blur(2px);
+  z-index: -9;
+  background-image: url("https://images.unsplash.com/photo-1587613989342-7e21016caff3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+}
+
+.wrapper-photo:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border: solid 0px white;
+  outline: white solid 1px;
+}
+
+.photo-viewer .modal-content {
+  border: 0px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.photo-viewer .modal-content .image-photo {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+}
+.modal-footer-image{
+  font-size: .8rem;
+  color: white;
+  background-color: rgb(124, 125, 126);
 }
