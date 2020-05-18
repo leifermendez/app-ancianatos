@@ -6,10 +6,11 @@ import { LoginComponent } from './pages/login/login.component';
 import {HomeModule} from '../home/home.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
+import { LogOutComponent } from './pages/log-out/log-out.component';
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, LogOutComponent],
   imports: [
     CommonModule,
     AuthGRoutingModule,

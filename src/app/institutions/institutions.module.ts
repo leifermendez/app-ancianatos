@@ -13,10 +13,11 @@ import {LoadingButtonDirective} from '../loading-button.directive';
 import {LoadingBlockComponent} from '../components/loading-block/loading-block.component';
 import {FilePickerModule} from 'ngx-awesome-uploader';
 import {SharedModule} from '../shared/shared.module';
+import {ListFormsComponent} from '../components/list-forms/list-forms.component';
 
 
 @NgModule({
-  declarations: [AddComponent, ListComponent],
+  declarations: [AddComponent, ListComponent, ListFormsComponent, ListFormsComponent],
   imports: [
     CommonModule,
     InstitutionsRoutingModule,

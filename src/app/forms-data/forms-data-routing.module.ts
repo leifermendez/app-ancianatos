@@ -4,7 +4,11 @@ import {SingleFormComponent} from './pages/single-form/single-form.component';
 
 const routes: Routes = [
   {
-    path: ':section/add',
+    path: ':id/add',
+    component: SingleFormComponent
+  },
+  {
+    path: ':id/add/:target',
     component: SingleFormComponent
   }
 ];

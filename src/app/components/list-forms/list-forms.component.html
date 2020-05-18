@@ -1,0 +1,10 @@
+<ul *ngIf="!loading">
+  <li [routerLink]="(target) ? ['/','forms',datum?.id,'add',target] :
+['/','forms',datum?.id,'add']" *ngFor="let datum of data">
+    <div>
+      <fa-icon [icon]="faTasks"></fa-icon>
+      <span class="ml-1">{{datum?.title}}</span>
+    </div>
+  </li>
+</ul>
+<app-loading-block *ngIf="loading"></app-loading-block>

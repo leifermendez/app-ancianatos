@@ -90,3 +90,10 @@ tag-input-form {
 tag-input-form > form > input {
   width: 100%;
 }
+.form-control {
+  border: solid 0px white;
+  border-radius: 0px;
+  font-size: .8rem;
+  background-color: rgb(250, 250, 250);
+  border-bottom: solid 1px #dddddd;
+}

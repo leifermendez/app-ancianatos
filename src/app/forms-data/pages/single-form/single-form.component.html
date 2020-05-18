@@ -1,1 +1,11 @@
-<p>single-form works!</p>
+<app-header label="User" [icon]="faUser"></app-header>
+<app-logged-user></app-logged-user>
+<div class="edit-add-user p-2 pl-2 pr-2 ml-3 mr-3">
+  <h6 class="title-form">{{title}}</h6>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+    <button [disabled]="!form.valid"
+            class="btn btn-info w-100">ENVIAR
+    </button>
+  </form>
+</div>

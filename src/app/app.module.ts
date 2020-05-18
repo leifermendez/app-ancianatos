@@ -17,6 +17,8 @@ import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
 import { LoadingButtonDirective } from './loading-button.directive';
 import { LoadingBlockComponent } from './components/loading-block/loading-block.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -48,10 +50,13 @@ export function playerFactory() {
       }
     }),
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    FormlyModule.forRoot()
   ],
   providers: [],
-  exports: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -31,4 +31,14 @@ export class AuthGService {
         reject(error);
       });
   });
+
+  public logout = () => new Promise((resolve, reject) => {
+    try {
+      this.cookieService.delete('session', '/');
+      this.cookieService.delete('user', '/');
+      resolve(true);
+    } catch (e) {
+      reject(false);
+    }
+  });
 }

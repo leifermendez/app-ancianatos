@@ -37,7 +37,7 @@
       "NAME_PLACEHOLDER": "Ingresa nombre",
       "LAST_NAME": "Apellidos",
       "LAST_NAME_PLACEHOLDER": "Ingresa Apellidos",
-      "PHONE": "Telefono",
+      "PHONE": "Teléfono",
       "PHONE_PLACEHOLDER": "Ingresa Telefono",
       "EMAIL": "Email",
       "EMAIL_PLACEHOLDER": "Ingresa el mail",
@@ -49,8 +49,8 @@
       "SEND": "Enviar",
       "IMAGES": "Fotos",
       "IMAGES_PLACEHOLDER": "Fotos",
-      "ADDRESS": "Dirección",
-      "ADDRESS_PLACEHOLDER": "Dirección"
+      "ADDRESS": "Domicilio",
+      "ADDRESS_PLACEHOLDER": "Ingresa el Domicilio"
     }
   },
   "INSTITUTIONS": {
@@ -71,7 +71,8 @@
       "DESCRIPTION": "Descripcion",
       "DESCRIPTION_PLACEHOLDER": "Descripcion",
       "IMAGES": "Fotos",
-      "IMAGES_PLACEHOLDER": "Fotos"
+      "IMAGES_PLACEHOLDER": "Fotos",
+      "FORMS": "Formulario"
     }
   },
   "404": {
