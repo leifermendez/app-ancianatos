@@ -84,18 +84,22 @@
           <img (click)="openModal(img)" *ngIf="img?.small" class="img-gallery" [src]="img?.small" alt="">
         </div>
         <div class="col-4 p-0">
-          <ngx-file-picker
-            class="customPicker"
-            (fileAdded)="addImage($event)"
-            (uploadSuccess)="uploadImage($event)"
-            (uploadFail)="uploadImageFail($event)"
-            [adapter]="adapter"
-            [itemTemplate]="itemTemplate">
-            <div class="dropzoneTemplate text-center">
-              <fa-icon [icon]="faImage" size="2x"></fa-icon>
-              <!--              <button type="button" class="btn btn-sm btn-outline-info">{{"GENERAL.UPLOAD" | translate}}</button>-->
-            </div>
-          </ngx-file-picker>
+          <div (click)="openCam()" class="block-cam">
+            <fa-icon [icon]="faCamera" size="2x"></fa-icon>
+          </div>
+
+<!--          <ngx-file-picker-->
+<!--            class="customPicker"-->
+<!--            (fileAdded)="addImage($event)"-->
+<!--            (uploadSuccess)="uploadImage($event)"-->
+<!--            (uploadFail)="uploadImageFail($event)"-->
+<!--            [adapter]="adapter"-->
+<!--            [itemTemplate]="itemTemplate">-->
+<!--            <div class="dropzoneTemplate text-center">-->
+<!--              <fa-icon [icon]="faImage" size="2x"></fa-icon>-->
+<!--              &lt;!&ndash;              <button type="button" class="btn btn-sm btn-outline-info">{{"GENERAL.UPLOAD" | translate}}</button>&ndash;&gt;-->
+<!--            </div>-->
+<!--          </ngx-file-picker>-->
 
         </div>
       </div>

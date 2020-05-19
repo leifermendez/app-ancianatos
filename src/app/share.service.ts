@@ -16,6 +16,7 @@ export class ShareService {
   public locationEmit = new EventEmitter<any>();
   public userEmit = new EventEmitter<any>();
   public typeRegister = new EventEmitter<any>();
+  public camImage = new EventEmitter<any>();
   modalRef: BsModalRef;
   config = {
     ignoreBackdropClick: false,

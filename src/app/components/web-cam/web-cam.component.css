@@ -1,0 +1,17 @@
+.btn-camera{
+  color: white;
+  border: solid 1px white;
+  border-radius: 5rem;
+  width: 4rem;
+  height: 4rem;
+  padding: .3rem;
+  line-height: 4.3rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4)
+}
+.btn-camera-switch{
+  background-color: transparent;
+  border: 0;
+  color: white;
+  padding: .5rem 1rem;
+}

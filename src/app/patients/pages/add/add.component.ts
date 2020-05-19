@@ -9,6 +9,7 @@ import {CookieService} from 'ngx-cookie-service';
 import {faCamera, faDownload, faHome, faImage, faTimes, faTrash, faUserShield} from '@fortawesome/free-solid-svg-icons';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {ModalPhotoComponent} from '../../../components/modal-photo/modal-photo.component';
+import {WebCamComponent} from '../../../components/web-cam/web-cam.component';
 
 @Component({
   selector: 'app-add',
@@ -41,13 +42,24 @@ export class AddComponent implements OnInit {
               private modalService: BsModalService,
               private cookie: CookieService,
               private route: ActivatedRoute) {
+    this.shared.camImage.subscribe(res => {
+      // console.log(res);
+      this.images.push({
+        ...{
+          name: 'image',
+          loading: false
+        }, ...res.data
+      });
+
+      console.log(this.images)
+    });
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params.id;
       this.load();
-      this.loadInstitutions()
+      this.loadInstitutions();
     });
 
     this.form = this.formBuilder.group({
@@ -164,6 +176,19 @@ export class AddComponent implements OnInit {
       })
     );
   }
+
+  openCam(data: any = {}) {
+    const initialState = {
+      data
+    };
+    this.modalRef = this.modalService.show(
+      WebCamComponent,
+      Object.assign({initialState}, {
+        class: 'photo-viewer'
+      })
+    );
+  }
+
 
   loadInstitutions = () => {
     this.rest.get(`institutions?limit=10000`)

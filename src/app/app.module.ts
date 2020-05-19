@@ -21,8 +21,10 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {FormlyModule} from '@ngx-formly/core';
 import {ModalPhotoComponent} from './components/modal-photo/modal-photo.component';
 import {TimeagoModule} from 'ngx-timeago';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
+import {WebCamComponent} from './components/web-cam/web-cam.component';
+import {WebcamModule} from 'ngx-webcam';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -37,7 +39,8 @@ export function playerFactory() {
   declarations: [
     AppComponent,
     Page404pageComponent,
-    ModalPhotoComponent
+    ModalPhotoComponent,
+    WebCamComponent
   ],
   imports: [
     BrowserModule,
@@ -59,11 +62,13 @@ export function playerFactory() {
     ReactiveFormsModule,
     FormlyModule.forRoot(),
     TimeagoModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    WebcamModule
   ],
   providers: [],
   exports: [],
-  entryComponents: [ModalPhotoComponent],
+  entryComponents: [ModalPhotoComponent,
+    WebCamComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

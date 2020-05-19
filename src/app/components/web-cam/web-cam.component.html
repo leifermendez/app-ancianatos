@@ -1,0 +1,21 @@
+<div>
+  <div class="text-right">
+    <button class="actionBtn btn-camera-switch" (click)="toggleWebcam();">
+      <fa-icon [icon]="faSyncAlt"></fa-icon>
+    </button>
+  </div>
+  <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+          *ngIf="showWebcam"
+          [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+          [videoOptions]="videoOptions"
+          [imageQuality]="1"
+          (cameraSwitched)="cameraWasSwitched($event)"
+          (initError)="handleInitError($event)"
+  ></webcam>
+  <div class="text-center" *ngIf="!loading">
+    <button type="button" class="actionBtn btn btn-primary btn-lg btn-link btn-camera" (click)="triggerSnapshot();">
+      <fa-icon [icon]="faCircle" [size]="'2x'"></fa-icon>
+    </button>
+  </div>
+
+</div>

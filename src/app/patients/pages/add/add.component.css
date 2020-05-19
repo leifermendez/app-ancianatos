@@ -21,3 +21,12 @@ input.ng-touched.ng-invalid {
   font-size: .75rem;
   border-radius: 3px;
 }
+
+.block-cam{
+  height: 6rem;
+  text-align: center;
+  line-height: 6rem;
+  border: solid 1px #eeeeee;
+  background-color: #f6f6f6;
+  border-radius: 3px;
+}

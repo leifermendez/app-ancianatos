@@ -139,6 +139,10 @@ tag-input-form > form > input {
   object-fit: contain;
 }
 
+.photo-viewer video {
+  width: 100%;
+}
+
 .modal-footer-image {
   font-size: .8rem;
   color: white;
