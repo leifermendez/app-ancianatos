@@ -21,6 +21,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {FormlyModule} from '@ngx-formly/core';
 import {ModalPhotoComponent} from './components/modal-photo/modal-photo.component';
 import {TimeagoModule} from 'ngx-timeago';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -56,7 +58,8 @@ export function playerFactory() {
     FontAwesomeModule,
     ReactiveFormsModule,
     FormlyModule.forRoot(),
-    TimeagoModule
+    TimeagoModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   exports: [],
