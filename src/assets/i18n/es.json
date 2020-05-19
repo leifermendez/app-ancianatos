@@ -52,7 +52,9 @@
       "ADDRESS": "Domicilio",
       "ADDRESS_PLACEHOLDER": "Ingresa el Domicilio",
       "AGE": "Edad",
-      "AGE_PLACEHOLDER": "Ingresa el edad"
+      "AGE_PLACEHOLDER": "Ingresa el edad",
+      "INSTITUTIONS": "Institución",
+      "INSTITUTIONS_PLACEHOLDER": "Ingresa institución"
     }
   },
   "INSTITUTIONS": {

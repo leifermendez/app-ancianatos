@@ -25,6 +25,7 @@ export class AddComponent implements OnInit {
   public itemsAsObjects: any;
   public id: any = false;
   public images = [];
+  public institutions = [];
   adapter = new FPickerAdapter(this.http, this.cookie);
 
   constructor(private formBuilder: FormBuilder,
@@ -40,6 +41,7 @@ export class AddComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params.id;
       this.load();
+      this.loadInstitutions();
     });
 
     this.form = this.formBuilder.group({
@@ -61,7 +63,7 @@ export class AddComponent implements OnInit {
       this.form.value)
       .subscribe(res => {
         this.loading = false;
-        this.router.navigate(['/', 'institutions']);
+        this.router.navigate(['/', 'institutions', 'add', res.data.id]);
       }, error => {
         this.loading = false;
       });
@@ -127,4 +129,13 @@ export class AddComponent implements OnInit {
   removeImage = (img) => {
     this.images = this.images.filter(a => a.id !== img.id);
   };
+
+  loadInstitutions = () => {
+    this.rest.get(`institutions?limit=10000`)
+      .subscribe(res => {
+        this.institutions = res.data.data;
+      }, error => {
+      });
+  };
+
 }

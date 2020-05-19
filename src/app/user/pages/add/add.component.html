@@ -13,7 +13,7 @@
     </div>
     <div class="form-group">
       <label for="form_email">{{"USER.FORM.EMAIL" |translate}}</label>
-      <input readonly type="email" formControlName="email" class="form-control" id="form_email"
+      <input [readOnly]="id" type="email" formControlName="email" class="form-control" id="form_email"
              placeholder="">
       <small class="form-text text-muted">{{"USER.FORM.EMAIL_PLACEHOLDER" |translate}}</small>
     </div>

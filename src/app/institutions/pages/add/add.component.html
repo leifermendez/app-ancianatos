@@ -40,7 +40,7 @@
                  [ngModelOptions]="{standalone: true}"></tag-input>
       <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
     </div>
-    <div class="form-group">
+    <div class="form-group" *ngIf="id">
       <label for="form_address">{{"INSTITUTIONS.FORM.FORMS" |translate}}</label>
       <app-list-forms [target]="id"></app-list-forms>
       <!--      <small class="form-text text-muted">{{"INSTITUTIONS.FORM.ADDRESS_PLACEHOLDER" |translate}}</small>-->

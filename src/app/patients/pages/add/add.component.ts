@@ -29,6 +29,7 @@ export class AddComponent implements OnInit {
   public itemsAsObjects: any;
   public id: any = false;
   public images = [];
+  public institutions: any;
   adapter = new FPickerAdapter(this.http, this.cookie);
   public form: FormGroup;
 
@@ -46,6 +47,7 @@ export class AddComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params.id;
       this.load();
+      this.loadInstitutions()
     });
 
     this.form = this.formBuilder.group({
@@ -57,6 +59,7 @@ export class AddComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       extra: [''],
       description: [''],
+      institutions_id: ['', Validators.required],
       emergency_name: ['', Validators.required],
       emergency_last_name: ['', Validators.required],
       emergency_phone: ['', Validators.required],
@@ -161,4 +164,12 @@ export class AddComponent implements OnInit {
       })
     );
   }
+
+  loadInstitutions = () => {
+    this.rest.get(`institutions?limit=10000`)
+      .subscribe(res => {
+        this.institutions = res.data.data;
+      }, error => {
+      });
+  };
 }
