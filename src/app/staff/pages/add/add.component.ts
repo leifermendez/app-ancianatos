@@ -28,6 +28,23 @@ export class AddComponent implements OnInit {
   public images = [];
   adapter = new FPickerAdapter(this.http, this.cookie);
   public form: FormGroup;
+  public levels = [
+    {
+      name: 'Admin',
+      value: 'admin',
+      select: false
+    },
+    {
+      name: 'Manager',
+      value: 'manager',
+      select: false
+    },
+    {
+      name: 'User',
+      value: 'user',
+      select: false
+    }
+  ];
 
   constructor(private formBuilder: FormBuilder,
               private rest: RestService,
@@ -72,7 +89,6 @@ export class AddComponent implements OnInit {
         this.loading = false;
       });
   };
-
 
 
   load = (report = false) => {
@@ -134,6 +150,14 @@ export class AddComponent implements OnInit {
 
   removeImage = (img) => {
     this.images = this.images.filter(a => a.id !== img.id);
+  };
+
+  loadInstitutions = () => {
+    this.rest.get(``)
+      .subscribe(res => {
+
+      }, error => {
+      });
   };
 
 }

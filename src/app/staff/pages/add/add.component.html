@@ -45,6 +45,13 @@
       <small class="form-text text-muted">{{"STAFF.FORM.TAG_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
+      <label for="form_level">{{"USER.FORM.LEVEL" |translate}}</label>
+      <select formControlName="level" class="form-control" id="form_level">
+        <option *ngFor="let level of levels" [value]="level?.value">{{level?.name}}</option>
+      </select>
+      <small class="form-text text-muted">{{"USER.FORM.LEVEL_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
       <label>{{"STAFF.FORM.IMAGES" |translate}}</label>
       <ng-template #itemTemplate let-fileItem="fileItem" let-uploadProgress="uploadProgress">
         <!--        {{fileItem | json}}-->

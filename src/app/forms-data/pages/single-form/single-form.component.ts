@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {FormlyFieldConfig} from '@ngx-formly/core';
-import {faUser, faDownload, faHome, faImage, faTimes, faTrash} from '@fortawesome/free-solid-svg-icons';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
 import {RestService} from '../../../rest.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ShareService} from '../../../share.service';
@@ -88,8 +88,6 @@ export class SingleFormComponent implements OnInit {
           });
         }
       });
-
-
     });
   };
 
