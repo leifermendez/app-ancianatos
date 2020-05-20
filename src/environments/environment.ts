@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: ' http://192.168.1.100:8000/api/1.0',
+  api: ' http://localhost:8000/api/1.0',
   daysTokenExpire: 4
 };
 

@@ -1,0 +1,23 @@
+<app-header label="User" [icon]="faUser"></app-header>
+<div class="edit-add-user p-2 pl-2 pr-2 ml-3 mr-3 mt-4">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="form_password">{{"CONFIRMED.FORM.PASSWORD" |translate}}</label>
+      <input type="password" formControlName="password" class="form-control" id="form_password"
+             placeholder="">
+      <small class="form-text text-muted">{{"CONFIRMED.FORM.PASSWORD_CONFIRMATION" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label for="form_password_confirmation">{{"CONFIRMED.FORM.PASSWORD_CONFIRMATION" |translate}}</label>
+      <input type="password" formControlName="password_confirmation" class="form-control"
+             id="form_password_confirmation"
+             placeholder="">
+      <small class="form-text text-muted">{{"CONFIRMED.FORM.PASSWORD_CONFIRMATION_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-info btn-block" [disabled]="!form.valid">
+        {{"GENERAL.SEND" |translate}}
+      </button>
+    </div>
+  </form>
+</div>

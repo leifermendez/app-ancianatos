@@ -8,6 +8,7 @@
   },
   "GENERAL": {
     "LOADING": "Cargando",
+    "SEND": "Enviar",
     "UPLOAD": "Agregar imagenes",
     "NOT_ALLOWED": "No tienes permisos para realizar esta acción"
   },
@@ -28,7 +29,11 @@
       "AVATAR": "Avatar",
       "SEND": "Enviar",
       "IMAGES": "Fotos",
-      "IMAGES_PLACEHOLDER": "Fotos"
+      "IMAGES_PLACEHOLDER": "Fotos",
+      "PASSWORD": "Contraseña",
+      "PASSWORD_PLACEHOLDER": "Ingresar contraseña",
+      "PASSWORD_CONFIRM": "Reptir contraseña",
+      "PASSWORD_CONFIRM_PLACEHOLDER": "Ingresar nuevamente tu contraseña"
     }
   },
   "STAFF": {
@@ -77,6 +82,14 @@
       "IMAGES": "Fotos",
       "IMAGES_PLACEHOLDER": "Fotos",
       "FORMS": "Formulario"
+    }
+  },
+  "CONFIRMED": {
+    "FORM": {
+      "PASSWORD": "Contraseña",
+      "PASSWORD_PLACEHOLDER": "Ingresa una contraseña",
+      "PASSWORD_CONFIRMATION": "Repetir contraseña",
+      "PASSWORD_CONFIRMATION_PLACEHOLDER": "Ingresa nuevamente contraseña"
     }
   },
   "PATIENTS": {

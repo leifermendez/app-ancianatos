@@ -173,6 +173,17 @@ export class ShareService {
     });
   };
 
+  alertHtml = (title = '', html = '') => {
+    return new Promise((resolve, reject) => {
+      Swal.fire({
+        title,
+        html,
+      }).then(a => {
+        resolve(true);
+      }).catch(e => console.log(e));
+    });
+  };
+
   showPosition = (position) => {
     const geo = {
       longitude: position.coords.longitude,
@@ -378,12 +389,26 @@ export class ShareService {
     }
   };
 
-   toBase64 = file => new Promise((resolve, reject) => {
+  toBase64 = file => new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => resolve(reader.result);
     reader.onerror = error => reject(error);
   });
 
-
+  public parseQuery = (obj: any = {}) => {
+    try {
+      // tslint:disable-next-line:only-arrow-functions
+      return Object.keys(obj).reduce(function(str, key, i) {
+        let delimiter;
+        let val;
+        delimiter = (i === 0) ? '?' : '&';
+        key = encodeURIComponent(key);
+        val = encodeURIComponent(obj[key]);
+        return [str, delimiter, key, '=', val].join('');
+      }, '');
+    } catch (e) {
+      return null;
+    }
+  };
 }
