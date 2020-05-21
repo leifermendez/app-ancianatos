@@ -1,8 +1,8 @@
 {
-  "name": "app-argentina",
-  "short_name": "app-argentina",
+  "name": "Control de Residenciales para Adultos",
+  "short_name": "CORA",
   "theme_color": "#f1f3f4",
-  "background_color": "#fafafa",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
