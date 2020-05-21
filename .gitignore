@@ -32,6 +32,7 @@ speed-measure-plugin*.json
 .history/*
 
 /plugins
+/res
 
 # misc
 /.sass-cache
