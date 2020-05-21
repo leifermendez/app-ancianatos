@@ -82,16 +82,24 @@ export class AddComponent implements OnInit {
       this.form.value)
       .subscribe(res => {
         this.loading = false;
-        const linkRaw = res.data.link.split('?');
-        let link = `${window.location.origin}/auth/confirmed/${res.data.id}?`;
-        link = `${link}${linkRaw.reverse().find(a => true)}`;
-        const html = `<input class="form-control"  readonly value="${link}">`;
-        this.shared.alertHtml('Compartir', html);
+        this.modalLink(res);
         this.router.navigate(['/', 'user']);
       }, error => {
         this.loading = false;
       });
-  }
+  };
+
+  modalLink = (res: any) => {
+    try {
+      const linkRaw = res.data.link.split('?');
+      let link = `${window.location.origin}/auth/confirmed/${res.data.id}?`;
+      link = `${link}${linkRaw.reverse().find(a => true)}`;
+      const html = `<input class="form-control"  readonly value="${link}">`;
+      this.shared.alertHtml('Compartir', html);
+    } catch (e) {
+      return null;
+    }
+  };
 
   parseUser = () => {
     try {
@@ -99,7 +107,7 @@ export class AddComponent implements OnInit {
     } catch (e) {
       return null;
     }
-  }
+  };
 
   load = (report = false) => {
     this.rest.get(`users/${this.id}${(report) ? '?export=pdf' : ''}`).subscribe(res => {
@@ -108,7 +116,7 @@ export class AddComponent implements OnInit {
       this.form.patchValue(res.data);
     }, error => {
     });
-  }
+  };
 
   trash = () => {
     this.shared.confirm('¿Seguro?', '', 'OK').then(
@@ -119,7 +127,7 @@ export class AddComponent implements OnInit {
             });
       }
     );
-  }
+  };
 
   report = () => {
     this.shared.confirm('Reporte', '', 'OK').then(
@@ -130,7 +138,7 @@ export class AddComponent implements OnInit {
         });
       }
     );
-  }
+  };
 
   addImage = (data) => {
     this.loading = true;
@@ -141,7 +149,7 @@ export class AddComponent implements OnInit {
         loading: true
       });
     });
-  }
+  };
 
   uploadImage = (data) => {
     this.loading = false;
@@ -152,13 +160,13 @@ export class AddComponent implements OnInit {
         a.id = a.online.id;
       }
     });
-  }
+  };
 
   uploadImageFail = (data) => {
     this.loading = false;
-  }
+  };
 
   removeImage = (img) => {
     this.images = this.images.filter(a => a.id !== img.id);
-  }
+  };
 }
