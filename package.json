@@ -30,6 +30,7 @@
     "@ngx-translate/core": "^12.1.2",
     "@ngx-translate/http-loader": "^4.0.0",
     "bootstrap": "4.1.1",
+    "expess": "0.0.1-security",
     "lottie-web": "^5.6.10",
     "ngx-awesome-uploader": "^9.0.4",
     "ngx-bootstrap": "^5.6.1",
