@@ -1,16 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.leangasoftware.cora" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <name>CoraAPp</name>
+    <name>CORA</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
-    </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
-    </author>
+    Control de Residenciales para Adultos
+  </description>
+    <author email="leifer33@gmail.com" href="http://cordova.io">
+    Leifer Mendez
+  </author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
