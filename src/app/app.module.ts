@@ -26,11 +26,9 @@ import {environment} from '../environments/environment';
 import {WebCamComponent} from './components/web-cam/web-cam.component';
 import {WebcamModule} from 'ngx-webcam';
 
-// AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-
 export function playerFactory() {
   return player;
 }
