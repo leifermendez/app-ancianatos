@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: ' http://localhost:8000/api/1.0',
+  api: 'https://peaceful-hamlet-82308.herokuapp.com/api/1.0',
   daysTokenExpire: 4
 };
 
