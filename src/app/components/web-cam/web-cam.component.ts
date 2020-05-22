@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Subject, Observable, throwError} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
-import {faCircle, faSyncAlt} from '@fortawesome/free-solid-svg-icons';
+import {faCircle, fas, faSyncAlt} from '@fortawesome/free-solid-svg-icons';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import {catchError} from 'rxjs/operators';
@@ -9,6 +9,9 @@ import {ShareService} from '../../share.service';
 import {environment} from '../../../environments/environment';
 import {RestService} from '../../rest.service';
 import {BsModalRef} from 'ngx-bootstrap/modal';
+
+declare var navigator: any;
+declare var Camera: any;
 
 @Component({
   selector: 'app-web-cam',
@@ -24,7 +27,7 @@ export class WebCamComponent implements OnInit {
   // toggle webcam on/off
   faCircle = faCircle;
   faSyncAlt = faSyncAlt;
-  public showWebcam = true;
+  public showWebcam = false;
   public allowCameraSwitch = true;
   public multipleWebcamsAvailable = false;
   public deviceId: string;
@@ -33,6 +36,7 @@ export class WebCamComponent implements OnInit {
     // width: {ideal: 1024},
     // height: {ideal: 576}
   };
+  public deviceReady = false;
   public errors: WebcamInitError[] = [];
 
   // latest snapshot
@@ -44,15 +48,43 @@ export class WebCamComponent implements OnInit {
   private nextWebcam: Subject<boolean | string> = new Subject<boolean | string>();
 
   public ngOnInit(): void {
-    WebcamUtil.getAvailableVideoInputs()
-      .then((mediaDevices: MediaDeviceInfo[]) => {
-        this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
-      });
+
+    if (environment.mobile) {
+      /**
+       * Solo aplica en Cordova
+       */
+      this.showWebcam = false;
+      document.addEventListener('deviceready', () => this.deviceReady = true);
+    } else {
+      this.showWebcam = true;
+      WebcamUtil.getAvailableVideoInputs()
+        .then((mediaDevices: MediaDeviceInfo[]) => {
+          this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
+        });
+    }
+
+
   }
 
   public triggerSnapshot(): void {
-    this.trigger.next();
+    if (this.deviceReady) {
+      const cameraOptions = {
+        destinationType: Camera.DestinationType.FILE_URI,
+      };
+      navigator.camera.getPicture(this.cameraSuccess, this.cameraError, cameraOptions);
+    } else {
+      this.trigger.next();
+    }
   }
+
+  private cameraSuccess = () => {
+    alert('Succes');
+
+  };
+
+  private cameraError = () => {
+    alert('Erro');
+  };
 
   public toggleWebcam(): void {
     this.showWebcam = !this.showWebcam;

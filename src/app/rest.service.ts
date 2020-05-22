@@ -57,6 +57,14 @@ export class RestService {
     );
   };
 
+  cookieCheck = () => {
+
+  };
+
+  localCheck = () => {
+
+  };
+
   alertError = () => {
 
   };

@@ -33,6 +33,7 @@ export class AddComponent implements OnInit {
   public institutions: any;
   adapter = new FPickerAdapter(this.http, this.cookie);
   public form: FormGroup;
+  public cameraMobile: any = {};
 
   constructor(private formBuilder: FormBuilder,
               private rest: RestService,
@@ -51,7 +52,7 @@ export class AddComponent implements OnInit {
         }, ...res.data
       });
 
-      console.log(this.images)
+      console.log(this.images);
     });
   }
 
