@@ -45,12 +45,14 @@ export class AddComponent implements OnInit {
               private modalService: BsModalService,
               private cookie: CookieService,
               private route: ActivatedRoute) {
+    this.shared.loadingEmit.subscribe(l => this.loading = l);
     this.shared.camImage.subscribe(res => {
-      // console.log(res);
+      console.log('Subscriber', res);
       this.images.push({
         ...{
           name: 'image',
-          loading: false
+          loading: false,
+          base: (res && res.type && (res.type === 'base')) ? res.base : null,
         }, ...res.data
       });
 
@@ -204,7 +206,9 @@ export class AddComponent implements OnInit {
 
   openNativeCam = () => {
     this.shared.takePicture()
-      .then(img => this.shared.uploadImage(img))
+      .then((img: any) => {
+        this.shared.uploadImage(img.origin, img.base);
+      })
       .catch(e => console.log('E:', e));
   };
 }

@@ -14,6 +14,7 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 })
 export class ShareService {
   public locationEmit = new EventEmitter<any>();
+  public loadingEmit = new EventEmitter<any>();
   public userEmit = new EventEmitter<any>();
   public typeRegister = new EventEmitter<any>();
   public camImage = new EventEmitter<any>();
@@ -433,7 +434,10 @@ export class ShareService {
             'image.png',
             'image/png')
             .then(res => {
-              this.uploadImage(res);
+              resolve({
+                origin: res,
+                base: `data:image/png;base64,${imageData}`
+              });
             });
         }, (err) => {
           reject(false);
@@ -454,16 +458,20 @@ export class ShareService {
   //   );
   // };
 
-  public uploadImage = (image: any) => {
-    console.log('Path', image);
+  public uploadImage = (image: any, base: any = null) => {
+    console.log('Origin: ', image);
+    console.log('Base: ', base);
+    this.loadingEmit.emit(true);
+    this.camImage.emit({type: 'base', base});
     const formData = new FormData();
     formData.append('file', image);
     this.postCam(`media`, formData).subscribe(im => {
-      this.camImage.emit(im);
       // this.loading = true;
       console.log('Bien !', im);
+      this.loadingEmit.emit(false);
     }, err => {
       // this.loading = true;
+      this.loadingEmit.emit(false);
       console.log('Error --> !', err);
     });
   };

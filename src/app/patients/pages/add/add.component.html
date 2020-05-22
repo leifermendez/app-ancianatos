@@ -80,6 +80,7 @@
           <span class="icon-close" (click)="removeImage(img)">
             <fa-icon [icon]="faTimes"></fa-icon>
           </span>
+          <img *ngIf="img?.base" class="img-gallery" [src]="img?.base" alt="">
           <img (click)="openModal(img.online)" *ngIf="img?.src" class="img-gallery" [src]="img?.online?.small" alt="">
           <img (click)="openModal(img)" *ngIf="img?.small" class="img-gallery" [src]="img?.small" alt="">
         </div>

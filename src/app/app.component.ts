@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +8,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class AppComponent {
   title = 'app-argentina';
 
-  public constructor(private router: Router) {
+  public constructor() {
     document.addEventListener('backbutton', () => {
-      console.log('Back BTN')
-      this.router.navigateByUrl('/');
+     return false;
     });
-
   }
 
 }
