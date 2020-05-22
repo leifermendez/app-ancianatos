@@ -33,7 +33,7 @@
     "@ngx-formly/schematics": "^5.6.1",
     "@ngx-translate/core": "^12.1.2",
     "@ngx-translate/http-loader": "^4.0.0",
-    "bootstrap": "4.1.1",
+    "bootstrap": "4.3.1",
     "cordova-android": "^8.1.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
     "express": "^4.17.1",
