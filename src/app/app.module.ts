@@ -21,7 +21,6 @@ import {environment} from '../environments/environment';
 import {WebCamComponent} from './components/web-cam/web-cam.component';
 import {WebcamModule} from 'ngx-webcam';
 import {Camera} from '@ionic-native/camera/ngx';
-import {WebView} from '@ionic-native/ionic-webview/ngx';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -62,8 +61,7 @@ export function playerFactory() {
     WebcamModule
   ],
   providers: [
-    Camera,
-    WebView
+    Camera
   ],
   exports: [],
   entryComponents: [ModalPhotoComponent,

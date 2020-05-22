@@ -148,7 +148,6 @@ export class WebCamComponent implements OnInit {
           }),
         );
     } catch (e) {
-
     }
   }
 }

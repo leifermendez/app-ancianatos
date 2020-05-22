@@ -17,10 +17,19 @@
     "cordova-plugin-ionic-webview": {
       "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
       "PACKAGE_NAME": "com.leangasoftware.cora"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.leangasoftware.cora"
+    },
+    "cordova-plugin-filepath": {
+      "PACKAGE_NAME": "com.leangasoftware.cora"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.leangasoftware.cora"
+    },
+    "cordova-plugin-file": {
       "PACKAGE_NAME": "com.leangasoftware.cora"
     }
   }

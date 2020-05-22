@@ -2,12 +2,12 @@ import {EventEmitter, Injectable} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
 import Swal from 'sweetalert2';
 import {CookieService} from 'ngx-cookie-service';
-import {Observable, throwError} from 'rxjs';
+import {Observable} from 'rxjs';
 import {Camera, CameraOptions} from '@ionic-native/camera/ngx';
-import {WebView} from '@ionic-native/ionic-webview/ngx';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,6 @@ export class ShareService {
 
   constructor(private meta: Meta,
               private camera: Camera,
-              private webView: WebView,
               private modalService: BsModalService,
               private cookieService: CookieService,
               public http: HttpClient) {
@@ -417,20 +416,25 @@ export class ShareService {
   /**
    * Ionic Camera
    */
-  public takePicture = () => new Promise((resolve, reject) => {
+  public takePicture = (mode = false) => new Promise((resolve, reject) => {
     try {
       const options: CameraOptions = {
-        quality: 100,
-        destinationType: this.camera.DestinationType.FILE_URI,
-        encodingType: this.camera.EncodingType.JPEG,
+        quality: 60,
+        destinationType: this.camera.DestinationType.DATA_URL,
+        encodingType: this.camera.EncodingType.PNG,
         mediaType: this.camera.MediaType.PICTURE,
         sourceType: this.camera.PictureSourceType.CAMERA
       };
 
       this.camera.getPicture(options)
         .then((imageData) => {
-          const image = this.webView.convertFileSrc(imageData);
-          resolve(image);
+          this.dataURLtoFile(
+            `data:image/png;base64,${imageData}`,
+            'image.png',
+            'image/png')
+            .then(res => {
+              this.uploadImage(res);
+            });
         }, (err) => {
           reject(false);
         });
@@ -438,4 +442,76 @@ export class ShareService {
       reject(false);
     }
   });
+
+  // public dataURLtoFile = (url, filename, mimeType) => {
+  //   return (fetch(url)
+  //       .then((res) => {
+  //         return res.arrayBuffer();
+  //       })
+  //       .then((buf: any) => {
+  //         return new File([buf], filename, {type: mimeType});
+  //       })
+  //   );
+  // };
+
+  public uploadImage = (image: any) => {
+    console.log('Path', image);
+    const formData = new FormData();
+    formData.append('file', image);
+    this.postCam(`media`, formData).subscribe(im => {
+      this.camImage.emit(im);
+      // this.loading = true;
+      console.log('Bien !', im);
+    }, err => {
+      // this.loading = true;
+      console.log('Error --> !', err);
+    });
+  };
+
+  dataURLtoFile = (data, filename, mime = '') => new Promise((resolve, reject) => {
+    try {
+
+      const byteString = atob(data.split(',')[1]);
+      const ab = new ArrayBuffer(byteString.length);
+      const ia = new Uint8Array(ab);
+      for (let i = 0; i < byteString.length; i += 1) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+      const file = new Blob([ab], {
+        type: mime
+      });
+      resolve(file);
+      //
+      //
+      // const arr = data.split(',');
+      // const bstr = atob(arr[1]);
+      // let n = bstr.length;
+      // const u8arr = new Uint8Array(n);
+      // while (n--) {
+      //   u8arr[n] = bstr.charCodeAt(n);
+      // }
+      // const file = new File([u8arr], filename, {type: mime});
+
+    } catch (e) {
+      reject(e);
+    }
+  });
+
+  postCam(path = '', body = {}, toast = true): Observable<any> {
+    try {
+      return this.http.post(`${environment.api}/${path}`, body,
+        {headers: this.parseHeader()})
+        .pipe();
+    } catch (e) {
+    }
+  }
+
+  parseHeader = () => {
+    const token = this.cookieService.get('session');
+    const header = {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/json'
+    };
+    return new HttpHeaders(header);
+  };
 }

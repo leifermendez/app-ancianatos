@@ -28,6 +28,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@ionic-native/camera": "^5.26.0",
     "@ionic-native/core": "^5.26.0",
+    "@ionic-native/file-path": "^5.26.0",
+    "@ionic-native/file-transfer": "^5.26.0",
     "@ionic-native/ionic-webview": "^5.26.0",
     "@ngx-formly/core": "^5.6.1",
     "@ngx-formly/schematics": "^5.6.1",
@@ -35,6 +37,9 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "bootstrap": "4.1.1",
     "cordova-android": "^8.1.0",
+    "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-file-transfer": "^1.7.1",
+    "cordova-plugin-filepath": "^1.5.8",
     "cordova-plugin-ionic-webview": "^4.2.1",
     "express": "^4.17.1",
     "lottie-web": "^5.6.10",
@@ -85,7 +90,9 @@
       "cordova-plugin-camera": {},
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
-      }
+      },
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-filepath": {}
     },
     "platforms": [
       "android"

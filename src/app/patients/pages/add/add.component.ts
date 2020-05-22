@@ -10,6 +10,7 @@ import {faCamera, faDownload, faHome, faImage, faTimes, faTrash, faUserShield} f
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {ModalPhotoComponent} from '../../../components/modal-photo/modal-photo.component';
 import {WebCamComponent} from '../../../components/web-cam/web-cam.component';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-add',
@@ -26,6 +27,7 @@ export class AddComponent implements OnInit {
   faImage = faImage;
   faTimes = faTimes;
   public lvl: any;
+  public mobile = false;
   public loading = false;
   public itemsAsObjects: any;
   public id: any = false;
@@ -57,6 +59,7 @@ export class AddComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.mobile = environment.mobile;
     this.route.params.subscribe(params => {
       this.id = params.id;
       this.load();
@@ -197,5 +200,11 @@ export class AddComponent implements OnInit {
         this.institutions = res.data.data;
       }, error => {
       });
+  };
+
+  openNativeCam = () => {
+    this.shared.takePicture()
+      .then(img => this.shared.uploadImage(img))
+      .catch(e => console.log('E:', e));
   };
 }
