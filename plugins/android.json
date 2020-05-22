@@ -9,13 +9,17 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.leangasoftware.cora"
-    }
-  },
-  "dependent_plugins": {
+    },
     "cordova-plugin-camera": {
       "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.leangasoftware.cora"
     },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "com.leangasoftware.cora"
+    }
+  },
+  "dependent_plugins": {
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "com.leangasoftware.cora"
     }

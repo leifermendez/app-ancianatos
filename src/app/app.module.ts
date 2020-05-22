@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
@@ -8,15 +7,11 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HeaderComponent} from './components/header/header.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {LoggedUserComponent} from './components/logged-user/logged-user.component';
-import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
+import {ModalModule} from 'ngx-bootstrap/modal';
 import {Page404pageComponent} from './components/page404page/page404page.component';
 import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
-import {LoadingButtonDirective} from './loading-button.directive';
-import {LoadingBlockComponent} from './components/loading-block/loading-block.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormlyModule} from '@ngx-formly/core';
 import {ModalPhotoComponent} from './components/modal-photo/modal-photo.component';
@@ -25,6 +20,7 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {WebCamComponent} from './components/web-cam/web-cam.component';
 import {WebcamModule} from 'ngx-webcam';
+import { Camera } from '@ionic-native/camera/ngx';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -63,7 +59,9 @@ export function playerFactory() {
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     WebcamModule
   ],
-  providers: [],
+  providers: [
+    Camera
+  ],
   exports: [],
   entryComponents: [ModalPhotoComponent,
     WebCamComponent],

@@ -2,9 +2,9 @@ import {EventEmitter, Injectable} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
 import Swal from 'sweetalert2';
 import {CookieService} from 'ngx-cookie-service';
-import {RestService} from './rest.service';
 import {Observable, throwError} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+import {Camera, CameraOptions} from '@ionic-native/camera/ngx';
+import {WebView} from '@ionic-native/ionic-webview/ngx';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
@@ -30,6 +30,8 @@ export class ShareService {
   };
 
   constructor(private meta: Meta,
+              private camera: Camera,
+              private webView: WebView,
               private modalService: BsModalService,
               private cookieService: CookieService,
               public http: HttpClient) {
@@ -411,4 +413,29 @@ export class ShareService {
       return null;
     }
   };
+
+  /**
+   * Ionic Camera
+   */
+  public takePicture = () => new Promise((resolve, reject) => {
+    try {
+      const options: CameraOptions = {
+        quality: 100,
+        destinationType: this.camera.DestinationType.FILE_URI,
+        encodingType: this.camera.EncodingType.JPEG,
+        mediaType: this.camera.MediaType.PICTURE,
+        sourceType: this.camera.PictureSourceType.CAMERA
+      };
+
+      this.camera.getPicture(options)
+        .then((imageData) => {
+          const image = this.webView.convertFileSrc(imageData);
+          resolve(image);
+        }, (err) => {
+          reject(false);
+        });
+    } catch (e) {
+      reject(false);
+    }
+  });
 }

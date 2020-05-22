@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Subject, Observable, throwError} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
-import {faCircle, fas, faSyncAlt} from '@fortawesome/free-solid-svg-icons';
+import {faCircle, faSyncAlt} from '@fortawesome/free-solid-svg-icons';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import {catchError} from 'rxjs/operators';
@@ -10,8 +10,6 @@ import {environment} from '../../../environments/environment';
 import {RestService} from '../../rest.service';
 import {BsModalRef} from 'ngx-bootstrap/modal';
 
-declare var navigator: any;
-declare var Camera: any;
 
 @Component({
   selector: 'app-web-cam',
@@ -49,42 +47,16 @@ export class WebCamComponent implements OnInit {
 
   public ngOnInit(): void {
 
-    if (environment.mobile) {
-      /**
-       * Solo aplica en Cordova
-       */
-      this.showWebcam = false;
-      document.addEventListener('deviceready', () => this.deviceReady = true);
-    } else {
-      this.showWebcam = true;
-      WebcamUtil.getAvailableVideoInputs()
-        .then((mediaDevices: MediaDeviceInfo[]) => {
-          this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
-        });
-    }
-
-
+    this.showWebcam = true;
+    WebcamUtil.getAvailableVideoInputs()
+      .then((mediaDevices: MediaDeviceInfo[]) => {
+        this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
+      });
   }
 
   public triggerSnapshot(): void {
-    if (this.deviceReady) {
-      const cameraOptions = {
-        destinationType: Camera.DestinationType.FILE_URI,
-      };
-      navigator.camera.getPicture(this.cameraSuccess, this.cameraError, cameraOptions);
-    } else {
-      this.trigger.next();
-    }
+    this.trigger.next();
   }
-
-  private cameraSuccess = () => {
-    alert('Succes');
-
-  };
-
-  private cameraError = () => {
-    alert('Erro');
-  };
 
   public toggleWebcam(): void {
     this.showWebcam = !this.showWebcam;
