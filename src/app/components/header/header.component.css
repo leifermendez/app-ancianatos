@@ -7,3 +7,8 @@
   font-weight: 600;
   box-shadow: 0 0 14px rgba(135, 135, 135, 0.14);
 }
+.img-logo{
+  height: 2rem;
+  /*width: 100%;*/
+  object-fit: contain;
+}

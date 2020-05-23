@@ -79,6 +79,8 @@
       "ADDRESS_PLACEHOLDER": "Dirección",
       "DESCRIPTION": "Descripcion",
       "DESCRIPTION_PLACEHOLDER": "Descripcion",
+      "PHONE": "Telefono",
+      "PHONE_PLACEHOLDER": "Telefono",
       "IMAGES": "Fotos",
       "IMAGES_PLACEHOLDER": "Fotos",
       "FORMS": "Formulario"
