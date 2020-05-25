@@ -1,5 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {faHome, faPlus} from '@fortawesome/free-solid-svg-icons';
+import {faHome, faPlus, faDownload} from '@fortawesome/free-solid-svg-icons';
 import {RestService} from '../../../rest.service';
 import {ShareService} from '../../../share.service';
 
@@ -11,6 +11,7 @@ import {ShareService} from '../../../share.service';
 export class ListComponent implements OnInit {
   faHome = faHome;
   faPlus = faPlus;
+  faDownload = faDownload;
   public data = [];
   public loading = false;
   public page: any = 1;
@@ -49,6 +50,17 @@ export class ListComponent implements OnInit {
       this.page = 1;
       this.load();
     }
+  };
+
+  report = () => {
+    this.shared.confirm('Reporte', '', 'OK').then(
+      res => {
+        this.rest.get(`institutions?export=pdf`).subscribe(res => {
+          window.open(res.data.file);
+        }, error => {
+        });
+      }
+    );
   };
 
   load = (queries: any = []) => {

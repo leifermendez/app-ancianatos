@@ -7,11 +7,16 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'app-argentina';
+  public loading = true;
 
   public constructor() {
     document.addEventListener('backbutton', () => {
-     return false;
+      return false;
     });
+
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
   }
 
 }

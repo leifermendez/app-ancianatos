@@ -1,7 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {RestService} from '../../../rest.service';
 import {ShareService} from '../../../share.service';
-import {faUser, faUserNurse, faPlus} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faUserNurse, faPlus, faDownload} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list',
@@ -11,6 +11,7 @@ import {faUser, faUserNurse, faPlus} from '@fortawesome/free-solid-svg-icons';
 export class ListComponent implements OnInit {
 
   faUser = faUser;
+  faDownload = faDownload;
   faPlus = faPlus;
   faUserNurse = faUserNurse;
   public data = [];
@@ -39,6 +40,18 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.load();
   }
+
+  report = () => {
+    this.shared.confirm('Reporte', '', 'OK').then(
+      res => {
+        this.rest.get(`staff?export=pdf`).subscribe(res => {
+          window.open(res.data.file);
+        }, error => {
+        });
+      }
+    );
+  };
+
 
   search = (q: string) => {
     this.data = [];

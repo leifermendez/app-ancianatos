@@ -1,7 +1,10 @@
 <app-header [label]="'HEADER.PATIENTS' | translate" [icon]="faUserShield"></app-header>
 <app-logged-user></app-logged-user>
 <div class="list-user p-2 pl-3 pr-3">
-  <div class="text-right mb-2">
+  <div class="d-flex justify-content-between mb-2 pl-1 pr-1">
+    <button (click)="report()" class="btn btn-outline-info btn-sm">
+      <fa-icon [icon]="faDownload"></fa-icon> <span>{{"INSTITUTIONS.REPORT" |translate}}</span>
+    </button>
     <button [routerLink]="['/','patients','add']" class="btn btn-outline-secondary btn-sm">
       <fa-icon [icon]="faPlus"></fa-icon>
     </button>
