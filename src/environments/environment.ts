@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   mobile: false,
-  api: 'http://localhost:8000/api/1.0',
+  api: 'https://c1371307.ferozo.com/API/public/api/1.0',
   daysTokenExpire: 4
 };
 

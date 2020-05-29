@@ -1,7 +1,7 @@
 {
   "HEADER": {
     "TITLE": "Centro Geriátrico",
-    "USER": "User",
+    "USER": "Usuario",
     "INSTITUTIONS": "Instituciones",
     "STAFF": "Personal",
     "PATIENTS": "Pacientes"
@@ -9,7 +9,7 @@
   "GENERAL": {
     "LOADING": "Cargando",
     "SEND": "Enviar",
-    "UPLOAD": "Agregar imagenes",
+    "UPLOAD": "Agregar imágenes",
     "NOT_ALLOWED": "No tienes permisos para realizar esta acción"
   },
   "AUTH": {
@@ -19,11 +19,11 @@
   "USER": {
     "FORM": {
       "NAME": "Nombre",
-      "NAME_PLACEHOLDER": "Ingresa nombre",
+      "NAME_PLACEHOLDER": "Ingresá nombre",
       "EMAIL": "Email",
-      "EMAIL_PLACEHOLDER": "Ingresa el mail",
+      "EMAIL_PLACEHOLDER": "Ingresá el mail",
       "LEVEL": "Level",
-      "LEVEL_PLACEHOLDER": "Selecciona un nivel",
+      "LEVEL_PLACEHOLDER": "Seleccioná un nivel",
       "TAG": "Etiquetas",
       "TAG_PLACEHOLDER": "Agregar etiquetas",
       "AVATAR": "Avatar",
@@ -39,15 +39,15 @@
   "STAFF": {
     "FORM": {
       "NAME": "Nombre",
-      "NAME_PLACEHOLDER": "Ingresa nombre",
+      "NAME_PLACEHOLDER": "Ingresá nombre",
       "LAST_NAME": "Apellidos",
-      "LAST_NAME_PLACEHOLDER": "Ingresa Apellidos",
+      "LAST_NAME_PLACEHOLDER": "Ingresá Apellidos",
       "PHONE": "Teléfono",
-      "PHONE_PLACEHOLDER": "Ingresa Telefono",
+      "PHONE_PLACEHOLDER": "Ingresá Telefono",
       "EMAIL": "Email",
-      "EMAIL_PLACEHOLDER": "Ingresa el mail",
+      "EMAIL_PLACEHOLDER": "Ingresá el mail",
       "LEVEL": "Level",
-      "LEVEL_PLACEHOLDER": "Selecciona un nivel",
+      "LEVEL_PLACEHOLDER": "Seleccioná un nivel",
       "TAG": "Etiquetas",
       "TAG_PLACEHOLDER": "Agregar etiquetas",
       "AVATAR": "Avatar",
@@ -55,22 +55,22 @@
       "IMAGES": "Fotos",
       "IMAGES_PLACEHOLDER": "Fotos",
       "ADDRESS": "Domicilio",
-      "ADDRESS_PLACEHOLDER": "Ingresa el Domicilio",
+      "ADDRESS_PLACEHOLDER": "Ingresá el Domicilio",
       "AGE": "Edad",
-      "AGE_PLACEHOLDER": "Ingresa el edad",
+      "AGE_PLACEHOLDER": "Ingresá el edad",
       "INSTITUTIONS": "Institución",
-      "INSTITUTIONS_PLACEHOLDER": "Ingresa institución"
+      "INSTITUTIONS_PLACEHOLDER": "Ingresá institución"
     }
   },
   "INSTITUTIONS": {
     "REPORT": "Reporte",
     "FORM": {
       "NAME": "Nombre",
-      "NAME_PLACEHOLDER": "Ingresa nombre",
+      "NAME_PLACEHOLDER": "Ingresá nombre",
       "EMAIL": "Email",
-      "EMAIL_PLACEHOLDER": "Ingresa el mail",
+      "EMAIL_PLACEHOLDER": "Ingresá el mail",
       "LEVEL": "Level",
-      "LEVEL_PLACEHOLDER": "Selecciona un nivel",
+      "LEVEL_PLACEHOLDER": "SeleccionÁ un nivel",
       "TAG": "Etiquetas",
       "TAG_PLACEHOLDER": "Agregar etiquetas",
       "AVATAR": "Avatar",
@@ -79,8 +79,8 @@
       "ADDRESS_PLACEHOLDER": "Dirección",
       "DESCRIPTION": "Descripcion",
       "DESCRIPTION_PLACEHOLDER": "Descripcion",
-      "PHONE": "Telefono",
-      "PHONE_PLACEHOLDER": "Telefono",
+      "PHONE": "Teléfono",
+      "PHONE_PLACEHOLDER": "Teléfono",
       "IMAGES": "Fotos",
       "IMAGES_PLACEHOLDER": "Fotos",
       "FORMS": "Formulario"
@@ -89,9 +89,9 @@
   "CONFIRMED": {
     "FORM": {
       "PASSWORD": "Contraseña",
-      "PASSWORD_PLACEHOLDER": "Ingresa una contraseña",
+      "PASSWORD_PLACEHOLDER": "Ingresá una contraseña",
       "PASSWORD_CONFIRMATION": "Repetir contraseña",
-      "PASSWORD_CONFIRMATION_PLACEHOLDER": "Ingresa nuevamente contraseña"
+      "PASSWORD_CONFIRMATION_PLACEHOLDER": "Ingresá nuevamente contraseña"
     }
   },
   "PATIENTS": {
@@ -100,15 +100,15 @@
     },
     "FORM": {
       "NAME": "Nombre",
-      "NAME_PLACEHOLDER": "Ingresa nombre",
+      "NAME_PLACEHOLDER": "Ingresá nombre",
       "LAST_NAME": "Apellidos",
-      "LAST_NAME_PLACEHOLDER": "Ingresa Apellidos",
+      "LAST_NAME_PLACEHOLDER": "Ingresá Apellidos",
       "PHONE": "Teléfono",
-      "PHONE_PLACEHOLDER": "Ingresa Telefono",
+      "PHONE_PLACEHOLDER": "Ingresá Telefono",
       "EMAIL": "Email",
-      "EMAIL_PLACEHOLDER": "Ingresa el mail",
+      "EMAIL_PLACEHOLDER": "Ingresá el mail",
       "LEVEL": "Level",
-      "LEVEL_PLACEHOLDER": "Selecciona un nivel",
+      "LEVEL_PLACEHOLDER": "Seleccioná un nivel",
       "TAG": "Etiquetas",
       "TAG_PLACEHOLDER": "Agregar etiquetas",
       "AVATAR": "Avatar",
@@ -116,15 +116,15 @@
       "IMAGES": "Fotos",
       "IMAGES_PLACEHOLDER": "Fotos",
       "ADDRESS": "Domicilio",
-      "ADDRESS_PLACEHOLDER": "Ingresa el Domicilio",
+      "ADDRESS_PLACEHOLDER": "Ingresá el Domicilio",
       "AGE": "Edad",
-      "AGE_PLACEHOLDER": "Ingresa el edad",
+      "AGE_PLACEHOLDER": "Ingresá el edad",
       "EMERGENCY_NAME": "Nombre",
-      "EMERGENCY_NAME_PLACEHOLDER": "Ingresa nombre de persona de Emergencia",
+      "EMERGENCY_NAME_PLACEHOLDER": "Ingresá nombre de persona de Emergencia",
       "EMERGENCY_LAST_NAME": "Apellidos",
-      "EMERGENCY_LAST_NAME_PLACEHOLDER": "Ingresa apellidos de persona de Emergencia",
+      "EMERGENCY_LAST_NAME_PLACEHOLDER": "Ingresá apellidos de persona de Emergencia",
       "EMERGENCY_PHONE": "Teléfono",
-      "EMERGENCY_PHONE_PLACEHOLDER": "Ingresa teléfono de persona de Emergencia"
+      "EMERGENCY_PHONE_PLACEHOLDER": "Ingresá teléfono de persona de Emergencia"
     }
   },
   "404": {
@@ -132,7 +132,7 @@
   },
   "LOGIN": {
     "EMAIL": "Email",
-    "EMAIL_PLACEHOLDER": "Ingresa tu email",
+    "EMAIL_PLACEHOLDER": "Ingresá tu email",
     "PASSWORD": "Contraseña",
     "SEND": "Entrar"
   },

@@ -13,22 +13,22 @@ export class HomeComponent implements OnInit {
   faUserShield = faUserShield;
   public menu = [
     {
-      name: 'User',
+      name: 'Usuarios',
       icon: this.faUser,
       source: ['/', 'user']
     },
     {
-      name: 'Institutions',
+      name: 'Instituciones',
       icon: this.faHome,
       source: ['/', 'institutions']
     },
     {
-      name: 'Staff',
+      name: 'Personal',
       icon: this.faUserNurse,
       source: ['/', 'staff']
     },
     {
-      name: 'Patients',
+      name: 'Pacientes',
       icon: this.faUserShield,
       source: ['/', 'patients']
     }
