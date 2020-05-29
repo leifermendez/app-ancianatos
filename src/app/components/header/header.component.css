@@ -1,6 +1,7 @@
 :host {
   display: block;
   background-color: #fff;
+  padding-top: .5rem;
 }
 
 .header {
@@ -11,4 +12,16 @@
   height: 2rem;
   /*width: 100%;*/
   object-fit: contain;
+}
+.border-color:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  /* background: red; */
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../../assets/images/footer.jpg");
 }
