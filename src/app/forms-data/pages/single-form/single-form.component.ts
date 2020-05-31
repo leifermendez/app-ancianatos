@@ -35,6 +35,7 @@ export class SingleFormComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      console.log(params)
       this.id = params.id;
       this.target = params.target;
       this.load();

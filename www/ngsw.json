@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1590583247097,
+  "timestamp": 1590931491853,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -8,13 +8,13 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/0.ec54a67fcca1e9e26247.js",
+        "/0.f5df0c8d10912b5ec9df.js",
         "/10.58872940919b0e7ab092.js",
         "/11.23edeedbffbee2d8c893.js",
-        "/12.7d8c68bba81789153209.js",
+        "/12.6f721b2f23ea03fcdfed.js",
         "/2.df77d30e83d51e72cc2f.js",
         "/7.9b66c675b2305d8b2ea3.js",
-        "/8.bd02fb55d65d2badbcd3.js",
+        "/8.961f8cbebba494817067.js",
         "/9.e6d0dbdd36607adbeafe.js",
         "/favicon.ico",
         "/index.html",
@@ -22,8 +22,8 @@
         "/manifest.webmanifest",
         "/polyfills-es5.40760c33f649b6b633e4.js",
         "/polyfills.7808c42baed4a267b504.js",
-        "/runtime.ce2e0aca90e53a88da95.js",
-        "/styles.2662b8d6dacec59216a5.css"
+        "/runtime.720fcde7afe90c8d0b3c.js",
+        "/styles.1b5a8d47fa6e37e291dd.css"
       ],
       "patterns": []
     },
@@ -43,9 +43,12 @@
         "/assets/icons/icon-96x96.png",
         "/assets/images/404.json",
         "/assets/images/computer.svg",
+        "/assets/images/footer.jpg",
+        "/assets/images/header.jpg",
         "/assets/images/loading-color.svg",
         "/assets/images/loading.svg",
         "/assets/images/logo-app-argentina.png",
+        "/footer.b33e4807679f341b9556.jpg",
         "/loading-color.92bbc04f203c51ccf76e.svg"
       ],
       "patterns": []
@@ -53,13 +56,13 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/0.ec54a67fcca1e9e26247.js": "d558e606186a702de401365c3f8d7d7de4e5f902",
+    "/0.f5df0c8d10912b5ec9df.js": "004cf073a6f1f3c1e9eac710c117d2da612af993",
     "/10.58872940919b0e7ab092.js": "a076aadefd3632e7e3ef569268aed25f4517c7dd",
     "/11.23edeedbffbee2d8c893.js": "bd4407887921a860aa61e71150e0742414cac4b5",
-    "/12.7d8c68bba81789153209.js": "0751272e29892a38e095b920ae0e7af50b511d37",
+    "/12.6f721b2f23ea03fcdfed.js": "d4c3ddc515f8c5a94f2d2b92394dbdbedb1f6752",
     "/2.df77d30e83d51e72cc2f.js": "536a82d244a4aae695af1dc8db2c39dee9453aa2",
     "/7.9b66c675b2305d8b2ea3.js": "dda1f0b06b0e63680f107bf3aa9b22145b7f91ab",
-    "/8.bd02fb55d65d2badbcd3.js": "ffd9fcfa72296f2613ea580a04736f9dcc989c4a",
+    "/8.961f8cbebba494817067.js": "7ba6dba52ee724e888728ca0ae72a7bfed2c2ba0",
     "/9.e6d0dbdd36607adbeafe.js": "9fecc6c759c47a06b3cc3eb66a2dfa3a439e4b8b",
     "/assets/i18n/es.json": "4308479a0eb16f2b1df5b64c91ab5e9305327b5b",
     "/assets/icons/icon-128x128.png": "b50f854e88a4bcec8f1f157f81a488c4fc61f52d",
@@ -72,18 +75,21 @@
     "/assets/icons/icon-96x96.png": "9d562d9026570be6b2e67a528830777cc2e303ce",
     "/assets/images/404.json": "0dce618ea03b356af7ede26136fb62ae653aa342",
     "/assets/images/computer.svg": "e335a48ed6476beaa95de27bc834aecd3d7e03a9",
+    "/assets/images/footer.jpg": "92e10da2d6e53608a6651795f5caaa9009eb0297",
+    "/assets/images/header.jpg": "d019b85773cb1bbd09b1fadb7a04143dd092925e",
     "/assets/images/loading-color.svg": "76f6701a3a2ed87eb9dfa8a8ee595aeb63fcd33b",
     "/assets/images/loading.svg": "0640a818ba51003ca2f4ccc1435d11ae1cdca0ac",
     "/assets/images/logo-app-argentina.png": "bd9b282fc270aab35a4d353cbb8eaa4b31d282a8",
     "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/index.html": "aede26592b2c71d49212823934122b723c58ab6d",
+    "/footer.b33e4807679f341b9556.jpg": "92e10da2d6e53608a6651795f5caaa9009eb0297",
+    "/index.html": "a416791697560e366d3bca8f0f559cab3bd6e093",
     "/loading-color.92bbc04f203c51ccf76e.svg": "76f6701a3a2ed87eb9dfa8a8ee595aeb63fcd33b",
     "/main.fca6d5b148f95db635bc.js": "7e052e2b3ede16b734da6d36f9c0caa5d3531ea8",
     "/manifest.webmanifest": "4fe8e84cb60f69efb1e5b4126151a6f028d7802e",
     "/polyfills-es5.40760c33f649b6b633e4.js": "26baf2a314fb82653a2b6e09a02b8d0e146a5de5",
     "/polyfills.7808c42baed4a267b504.js": "36e1c9810e82c3f0518132f96d8e40fd5c3a7d3a",
-    "/runtime.ce2e0aca90e53a88da95.js": "5a4d18d5e82d0489a984a3485cbe75ccd4a59213",
-    "/styles.2662b8d6dacec59216a5.css": "065244693cd4c1b11bb0e7b6999b8cbc4589949b"
+    "/runtime.720fcde7afe90c8d0b3c.js": "d26a6f1d56830bdd067fcf7729692bb787cb6b81",
+    "/styles.1b5a8d47fa6e37e291dd.css": "065244693cd4c1b11bb0e7b6999b8cbc4589949b"
   },
   "navigationUrls": [
     {

@@ -92,7 +92,7 @@ export class AddComponent implements OnInit {
   modalLink = (res: any) => {
     try {
       const linkRaw = res.data.link.split('?');
-      let link = `${window.location.origin}/auth/confirmed/${res.data.id}?`;
+      let link = `${window.location.origin}/#/auth/confirmed/${res.data.id}?`;
       link = `${link}${linkRaw.reverse().find(a => true)}`;
       const html = `<input class="form-control"  readonly value="${link}">`;
       this.shared.alertHtml('Compartir', html);

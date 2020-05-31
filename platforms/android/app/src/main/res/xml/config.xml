@@ -37,6 +37,7 @@
     Leifer Mendez
   </author>
     <content src="index.html" />
+    <allow-navigation href="*" />
     <access origin="*" />
     <icon src="res/icon.png" />
     <allow-intent href="http://*/*" />
