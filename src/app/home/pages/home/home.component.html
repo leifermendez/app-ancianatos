@@ -3,10 +3,13 @@
 <div class="content-row p-2">
   <div class="col-12 m-0 row p-0">
     <div class="col-6 p-2" *ngFor="let item of menu">
-      <div class="block" [routerLink]="item?.source">
-        <fa-icon [icon]="item?.icon" [size]="'2x'"></fa-icon>
-        <div>{{item?.name}}</div>
-      </div>
+      <ng-container *ngIf="item?.scope">
+        <div class="block" [routerLink]="item?.source">
+          <fa-icon [icon]="item?.icon" [size]="'2x'"></fa-icon>
+          <div>{{item?.name}}</div>
+        </div>
+      </ng-container>
+
     </div>
   </div>
 </div>

@@ -32,6 +32,14 @@ export class AuthGService {
       });
   });
 
+  public getUser = () => {
+    try {
+      return JSON.parse(this.cookieService.get('user'));
+    } catch (e) {
+      return null;
+    }
+  };
+
   public logout = () => new Promise((resolve, reject) => {
     try {
       this.cookieService.delete('session', '/');

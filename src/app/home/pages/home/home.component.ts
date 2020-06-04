@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {faUser, faHome, faUserNurse, faUserShield} from '@fortawesome/free-solid-svg-icons';
+import {AuthGService} from '../../../auth-g.service';
 
 @Component({
   selector: 'app-home',
@@ -11,33 +12,40 @@ export class HomeComponent implements OnInit {
   faHome = faHome;
   faUserNurse = faUserNurse;
   faUserShield = faUserShield;
-  public menu = [
-    {
-      name: 'Usuarios',
-      icon: this.faUser,
-      source: ['/', 'user']
-    },
-    {
-      name: 'Instituciones',
-      icon: this.faHome,
-      source: ['/', 'institutions']
-    },
-    {
-      name: 'Personal',
-      icon: this.faUserNurse,
-      source: ['/', 'staff']
-    },
-    {
-      name: 'Pacientes',
-      icon: this.faUserShield,
-      source: ['/', 'patients']
-    }
-  ];
+  public menu: any = [];
 
-  constructor() {
+  constructor(public auth: AuthGService) {
+    console.log(this.auth.getUser());
   }
 
   ngOnInit() {
+    const {level} = this.auth.getUser();
+    this.menu = [
+      {
+        name: 'Instituciones',
+        icon: this.faHome,
+        scope: ['admin', 'manager', 'user'].includes(level),
+        source: ['/', 'institutions']
+      },
+      {
+        name: 'Personal',
+        scope: ['admin', 'manager', 'user'].includes(level),
+        icon: this.faUserNurse,
+        source: ['/', 'staff']
+      },
+      {
+        name: 'Pacientes',
+        scope: ['admin', 'manager', 'user'].includes(level),
+        icon: this.faUserShield,
+        source: ['/', 'patients']
+      },
+      {
+        name: 'Usuarios',
+        icon: this.faUser,
+        scope: ['admin'].includes(level),
+        source: ['/', 'user']
+      },
+    ];
   }
 
 }

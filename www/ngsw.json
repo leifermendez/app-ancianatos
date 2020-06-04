@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1590931491853,
+  "timestamp": 1591035812418,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
         "/11.23edeedbffbee2d8c893.js",
         "/12.6f721b2f23ea03fcdfed.js",
         "/2.df77d30e83d51e72cc2f.js",
-        "/7.9b66c675b2305d8b2ea3.js",
+        "/7.7b11f1bd47b03b9158ba.js",
         "/8.961f8cbebba494817067.js",
         "/9.e6d0dbdd36607adbeafe.js",
         "/favicon.ico",
@@ -22,7 +22,7 @@
         "/manifest.webmanifest",
         "/polyfills-es5.40760c33f649b6b633e4.js",
         "/polyfills.7808c42baed4a267b504.js",
-        "/runtime.720fcde7afe90c8d0b3c.js",
+        "/runtime.bb83b53e2be15deadbfe.js",
         "/styles.1b5a8d47fa6e37e291dd.css"
       ],
       "patterns": []
@@ -61,7 +61,7 @@
     "/11.23edeedbffbee2d8c893.js": "bd4407887921a860aa61e71150e0742414cac4b5",
     "/12.6f721b2f23ea03fcdfed.js": "d4c3ddc515f8c5a94f2d2b92394dbdbedb1f6752",
     "/2.df77d30e83d51e72cc2f.js": "536a82d244a4aae695af1dc8db2c39dee9453aa2",
-    "/7.9b66c675b2305d8b2ea3.js": "dda1f0b06b0e63680f107bf3aa9b22145b7f91ab",
+    "/7.7b11f1bd47b03b9158ba.js": "ff53bd919d3d31770f66e9e14d61713d3571eb6f",
     "/8.961f8cbebba494817067.js": "7ba6dba52ee724e888728ca0ae72a7bfed2c2ba0",
     "/9.e6d0dbdd36607adbeafe.js": "9fecc6c759c47a06b3cc3eb66a2dfa3a439e4b8b",
     "/assets/i18n/es.json": "4308479a0eb16f2b1df5b64c91ab5e9305327b5b",
@@ -82,13 +82,13 @@
     "/assets/images/logo-app-argentina.png": "bd9b282fc270aab35a4d353cbb8eaa4b31d282a8",
     "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
     "/footer.b33e4807679f341b9556.jpg": "92e10da2d6e53608a6651795f5caaa9009eb0297",
-    "/index.html": "a416791697560e366d3bca8f0f559cab3bd6e093",
+    "/index.html": "86094c9daf947fda2e9ab84711aaa47243a276c2",
     "/loading-color.92bbc04f203c51ccf76e.svg": "76f6701a3a2ed87eb9dfa8a8ee595aeb63fcd33b",
     "/main.fca6d5b148f95db635bc.js": "7e052e2b3ede16b734da6d36f9c0caa5d3531ea8",
     "/manifest.webmanifest": "4fe8e84cb60f69efb1e5b4126151a6f028d7802e",
     "/polyfills-es5.40760c33f649b6b633e4.js": "26baf2a314fb82653a2b6e09a02b8d0e146a5de5",
     "/polyfills.7808c42baed4a267b504.js": "36e1c9810e82c3f0518132f96d8e40fd5c3a7d3a",
-    "/runtime.720fcde7afe90c8d0b3c.js": "d26a6f1d56830bdd067fcf7729692bb787cb6b81",
+    "/runtime.bb83b53e2be15deadbfe.js": "50693b08510adf80f6bf40c65a387de741e55787",
     "/styles.1b5a8d47fa6e37e291dd.css": "065244693cd4c1b11bb0e7b6999b8cbc4589949b"
   },
   "navigationUrls": [

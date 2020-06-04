@@ -92,4 +92,15 @@ export class SingleFormComponent implements OnInit {
     });
   };
 
+  report = () => {
+    this.shared.confirm('Reporte', '', 'OK').then(
+      res => {
+        this.rest.get(`institutions/${this.target}?export=pdf&mode=declaration`).subscribe(res => {
+          window.open(res.data.url);
+        }, error => {
+        });
+      }
+    );
+  };
+
 }

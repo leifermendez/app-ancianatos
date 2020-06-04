@@ -7,5 +7,8 @@
     <button [disabled]="!form.valid"
             class="btn btn-info w-100">ENVIAR
     </button>
+    <button type="button" (click)="report()" [disabled]="!form.valid"
+            class="btn mt-2 btn-secondary w-100">REPORTE
+    </button>
   </form>
 </div>

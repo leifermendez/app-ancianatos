@@ -33,13 +33,13 @@
                 rows="3"></textarea>
       <small class="form-text text-muted">{{"INSTITUTIONS.FORM.DESCRIPTION_PLACEHOLDER" |translate}}</small>
     </div>
-    <!--        <div class="form-group">-->
-    <!--          <label for="form_level">{{"USER.FORM.LEVEL" |translate}}</label>-->
-    <!--          <select formControlName="level" class="form-control" id="form_level">-->
-    <!--            <option *ngFor="let level of levels" [value]="level?.value">{{level?.name}}</option>-->
-    <!--          </select>-->
-    <!--          <small class="form-text text-muted">{{"USER.FORM.LEVEL_PLACEHOLDER" |translate}}</small>-->
-    <!--        </div>-->
+    <div class="form-group">
+      <label for="form_level">{{"INSTITUTIONS.FORM.USER" |translate}}</label>
+      <select formControlName="user_id" class="form-control" id="form_level">
+        <option *ngFor="let user of users" [value]="user?.id">{{user?.name}}</option>
+      </select>
+      <small class="form-text text-muted">{{"INSTITUTIONS.FORM.USER_PLACEHOLDER" |translate}}</small>
+    </div>
     <div class="form-group">
       <label>{{"INSTITUTIONS.FORM.TAG" |translate}}</label>
       <tag-input [identifyBy]="'key'" [displayBy]="'value'" [placeholder]="''" [(ngModel)]="itemsAsObjects"
