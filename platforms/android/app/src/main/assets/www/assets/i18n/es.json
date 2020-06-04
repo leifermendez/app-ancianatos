@@ -75,6 +75,8 @@
       "TAG_PLACEHOLDER": "Agregar etiquetas",
       "AVATAR": "Avatar",
       "SEND": "Enviar",
+      "USER": "Usuario",
+      "USER_PLACEHOLDER": "Selecciona usuario",
       "ADDRESS": "Dirección",
       "ADDRESS_PLACEHOLDER": "Dirección",
       "DESCRIPTION": "Descripcion",
