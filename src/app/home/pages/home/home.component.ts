@@ -24,18 +24,18 @@ export class HomeComponent implements OnInit {
       {
         name: 'Instituciones',
         icon: this.faHome,
-        scope: ['admin', 'manager', 'user'].includes(level),
+        scope: ['admin'].includes(level),
         source: ['/', 'institutions']
       },
       {
         name: 'Personal',
-        scope: ['admin', 'manager', 'user'].includes(level),
+        scope: ['admin', 'manager'].includes(level),
         icon: this.faUserNurse,
         source: ['/', 'staff']
       },
       {
         name: 'Pacientes',
-        scope: ['admin', 'manager', 'user'].includes(level),
+        scope: ['admin', 'manager'].includes(level),
         icon: this.faUserShield,
         source: ['/', 'patients']
       },
