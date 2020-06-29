@@ -28,6 +28,16 @@ export class AddComponent implements OnInit {
   public images = [];
   adapter = new FPickerAdapter(this.http, this.cookie);
   public form: FormGroup;
+  public zones = [
+    {
+      name: 'Madrid',
+      value: 'madrid'
+    },
+    {
+      name: 'Barcelona',
+      value: 'barcelona'
+    }
+  ];
   public levels = [
     {
       name: 'Admin',
