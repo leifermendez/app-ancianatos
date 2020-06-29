@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {faUser, faHome, faUserNurse, faUserShield} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faHome, faUserNurse, faUserShield, faCity} from '@fortawesome/free-solid-svg-icons';
 import {AuthGService} from '../../../auth-g.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   faUser = faUser;
   faHome = faHome;
   faUserNurse = faUserNurse;
+  faCity = faCity;
   faUserShield = faUserShield;
   public menu: any = [];
 
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
       {
         name: 'Instituciones',
         icon: this.faHome,
-        scope: ['admin'].includes(level),
+        scope: ['admin', 'manager'].includes(level),
         source: ['/', 'institutions']
       },
       {
@@ -38,6 +39,12 @@ export class HomeComponent implements OnInit {
         scope: ['admin', 'manager'].includes(level),
         icon: this.faUserShield,
         source: ['/', 'patients']
+      },
+      {
+        name: 'Ciudades',
+        scope: ['admin'].includes(level),
+        icon: this.faCity,
+        source: ['/', 'zones']
       },
       {
         name: 'Usuarios',

@@ -66,6 +66,7 @@ export class AddComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       level: ['', Validators.required],
+      zone: ['', Validators.required],
       extra: [''],
       images: [''],
       avatar: [''],

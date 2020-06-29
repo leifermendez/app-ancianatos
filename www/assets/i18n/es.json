@@ -33,7 +33,8 @@
       "PASSWORD": "Contraseña",
       "PASSWORD_PLACEHOLDER": "Ingresar contraseña",
       "PASSWORD_CONFIRM": "Reptir contraseña",
-      "PASSWORD_CONFIRM_PLACEHOLDER": "Ingresar nuevamente tu contraseña"
+      "PASSWORD_CONFIRM_PLACEHOLDER": "Ingresar nuevamente tu contraseña",
+      "A": "A"
     }
   },
   "STAFF": {

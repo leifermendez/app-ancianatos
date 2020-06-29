@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1591297277034,
+  "timestamp": 1591621256006,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -8,7 +8,7 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/0.d4d041fb29381bcf1a67.js",
+        "/0.bcf6aafe9c14928deed0.js",
         "/10.58872940919b0e7ab092.js",
         "/11.23edeedbffbee2d8c893.js",
         "/12.6f721b2f23ea03fcdfed.js",
@@ -22,7 +22,7 @@
         "/manifest.webmanifest",
         "/polyfills-es5.40760c33f649b6b633e4.js",
         "/polyfills.7808c42baed4a267b504.js",
-        "/runtime.367c7dfd1524cb36d473.js",
+        "/runtime.d9a02959065384a692c2.js",
         "/styles.1b5a8d47fa6e37e291dd.css"
       ],
       "patterns": []
@@ -56,7 +56,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/0.d4d041fb29381bcf1a67.js": "a046c60610fa88b553baef6038d47b5789e3e071",
+    "/0.bcf6aafe9c14928deed0.js": "86e4111c62b53ae8fc0128fba58a2146ca9c1906",
     "/10.58872940919b0e7ab092.js": "a076aadefd3632e7e3ef569268aed25f4517c7dd",
     "/11.23edeedbffbee2d8c893.js": "bd4407887921a860aa61e71150e0742414cac4b5",
     "/12.6f721b2f23ea03fcdfed.js": "d4c3ddc515f8c5a94f2d2b92394dbdbedb1f6752",
@@ -82,13 +82,13 @@
     "/assets/images/logo-app-argentina.png": "bd9b282fc270aab35a4d353cbb8eaa4b31d282a8",
     "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
     "/footer.b33e4807679f341b9556.jpg": "92e10da2d6e53608a6651795f5caaa9009eb0297",
-    "/index.html": "06215ff527bcfadcece3af4ca2b17d8cb630ed0b",
+    "/index.html": "8151bf8fb5bfbe5eb4c72946d9c122c95be0a739",
     "/loading-color.92bbc04f203c51ccf76e.svg": "76f6701a3a2ed87eb9dfa8a8ee595aeb63fcd33b",
     "/main.b813199ccbb005358dfc.js": "676ed66e2e9208a24312bfef83d8e3ef6d44ce55",
     "/manifest.webmanifest": "4fe8e84cb60f69efb1e5b4126151a6f028d7802e",
     "/polyfills-es5.40760c33f649b6b633e4.js": "26baf2a314fb82653a2b6e09a02b8d0e146a5de5",
     "/polyfills.7808c42baed4a267b504.js": "36e1c9810e82c3f0518132f96d8e40fd5c3a7d3a",
-    "/runtime.367c7dfd1524cb36d473.js": "b85b1788e13ea0f6af0c4999816e8bcb7b5834a7",
+    "/runtime.d9a02959065384a692c2.js": "7ba761fe9e99f8e02e7ed6ec748787687bc408e1",
     "/styles.1b5a8d47fa6e37e291dd.css": "065244693cd4c1b11bb0e7b6999b8cbc4589949b"
   },
   "navigationUrls": [
