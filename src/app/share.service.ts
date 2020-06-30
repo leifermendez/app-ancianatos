@@ -30,6 +30,17 @@ export class ShareService {
     location: {pathname: null, search: null, href: null}
   };
 
+  public findInvalidControls(form: any) {
+    const invalid = [];
+    const controls = form.controls;
+    for (const name in controls) {
+      if (controls[name].invalid) {
+        invalid.push(name);
+      }
+    }
+    return invalid;
+  }
+
   constructor(private meta: Meta,
               private camera: Camera,
               private modalService: BsModalService,

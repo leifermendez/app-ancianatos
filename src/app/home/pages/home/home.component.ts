@@ -41,15 +41,9 @@ export class HomeComponent implements OnInit {
         source: ['/', 'patients']
       },
       {
-        name: 'Ciudades',
-        scope: ['admin'].includes(level),
-        icon: this.faCity,
-        source: ['/', 'zones']
-      },
-      {
         name: 'Usuarios',
         icon: this.faUser,
-        scope: ['admin'].includes(level),
+        scope: ['admin', 'manager'].includes(level),
         source: ['/', 'user']
       },
     ];

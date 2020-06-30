@@ -30,12 +30,128 @@ export class AddComponent implements OnInit {
   public form: FormGroup;
   public zones = [
     {
-      name: 'Madrid',
-      value: 'madrid'
+      name: 'Castellanos',
+      value: 'castellanos'
     },
     {
-      name: 'Barcelona',
-      value: 'barcelona'
+      name: 'Amenábar',
+      value: 'amenábar'
+    },
+    {
+      name: 'Cafferata',
+      value: 'cafferata'
+    },
+    {
+      name: 'Cañada del Ucle',
+      value: 'cañada del ucle'
+    },
+    {
+      name: 'Carmen',
+      value: 'carmen'
+    },
+    {
+      name: 'Carreras',
+      value: 'carreras'
+    },
+    {
+      name: 'Chapuy',
+      value: 'chapuy'
+    },
+    {
+      name: 'Chovet',
+      value: 'chovet'
+    },
+    {
+      name: 'Christophersen',
+      value: 'christophersen'
+    },
+    {
+      name: 'Diego de Alvear',
+      value: 'diego de alvear'
+    },
+    {
+      name: 'Elortondo',
+      value: 'elortondo'
+    },
+    {
+      name: 'Firmat',
+      value: 'firmat'
+    },
+    {
+      name: 'Hughes',
+      value: 'hughes'
+    },
+    {
+      name: 'Labordeboy',
+      value: 'labordeboy'
+    },
+    {
+      name: 'La Chispa',
+      value: 'la chispa'
+    },
+    {
+      name: 'Lazzarino',
+      value: 'lazzarino'
+    },
+    {
+      name: 'Maggiolo',
+      value: 'maggiolo'
+    },
+    {
+      name: 'María Teresa',
+      value: 'maría teresa'
+    },
+    {
+      name: 'Melincué',
+      value: 'melincué'
+    },
+    {
+      name: 'Miguel Torres',
+      value: 'miguel torres'
+    },
+    {
+      name: 'Murphy',
+      value: 'murphy'
+    },
+    {
+      name: 'Rufino',
+      value: 'rufino'
+    },
+    {
+      name: 'Sancti Spiritu',
+      value: 'sancti spiritu'
+    },
+    {
+      name: 'San Eduardo',
+      value: 'san eduardo'
+    },
+    {
+      name: 'San Francisco de Santa Fe',
+      value: 'san francisco de santa fe'
+    },
+    {
+      name: 'San Gregorio',
+      value: 'san gregorio'
+    },
+    {
+      name: 'Santa Isabel',
+      value: 'santa isabel'
+    },
+    {
+      name: 'Teodelina',
+      value: 'teodelina'
+    },
+    {
+      name: 'Venado Tuerto',
+      value: 'venado tuerto'
+    },
+    {
+      name: 'Villa Cañás',
+      value: 'villa cañás'
+    },
+    {
+      name: 'Wheelwright',
+      value: 'wheelwright'
     }
   ];
   public levels = [
@@ -59,7 +175,7 @@ export class AddComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private rest: RestService,
               private router: Router,
-              private shared: ShareService,
+              public shared: ShareService,
               private http: HttpClient,
               private cookie: CookieService,
               private route: ActivatedRoute) {
@@ -81,10 +197,15 @@ export class AddComponent implements OnInit {
       images: [''],
       avatar: [''],
     });
+
+    this.form.patchValue({
+      level: 'manager'
+    });
   }
 
   onSubmit = () => {
     this.loading = true;
+
     this.form.patchValue({
       extra: this.itemsAsObjects,
       images: this.images
