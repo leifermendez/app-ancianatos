@@ -2,7 +2,7 @@
   "HEADER": {
     "TITLE": "Centro Geriátrico",
     "USER": "Usuario",
-    "INSTITUTIONS": "Instituciones",
+    "INSTITUTIONS": "Hogares",
     "STAFF": "Personal",
     "PATIENTS": "Pacientes"
   },
@@ -22,8 +22,8 @@
       "NAME_PLACEHOLDER": "Ingresá nombre",
       "EMAIL": "Email",
       "EMAIL_PLACEHOLDER": "Ingresá el mail",
-      "LEVEL": "Level",
-      "LEVEL_PLACEHOLDER": "Seleccioná un nivel",
+      "LEVEL": "Nivel administrador",
+      "LEVEL_PLACEHOLDER": "Seleccioná un nivel de administrador",
       "TAG": "Etiquetas",
       "TAG_PLACEHOLDER": "Agregar etiquetas",
       "ZONE": "Ciudad",
@@ -87,7 +87,9 @@
       "PHONE_PLACEHOLDER": "Teléfono",
       "IMAGES": "Fotos",
       "IMAGES_PLACEHOLDER": "Fotos",
-      "FORMS": "Formulario"
+      "FORMS": "Formulario",
+      "TYPE": "Modo",
+      "TYPE_PLACEHOLDER": "Selecciona modo"
     }
   },
   "CONFIRMED": {
@@ -138,6 +140,7 @@
     "EMAIL": "Email",
     "EMAIL_PLACEHOLDER": "Ingresá tu email",
     "PASSWORD": "Contraseña",
+    "FORGOT_PASSWORD": "Olvide mi contraseña",
     "SEND": "Entrar"
   },
   "ERROR": {

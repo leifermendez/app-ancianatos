@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ShareService} from '../../../share.service';
 import {HttpClient} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
+import {AuthGService} from '../../../auth-g.service';
 
 @Component({
   selector: 'app-add',
@@ -156,18 +157,13 @@ export class AddComponent implements OnInit {
   ];
   public levels = [
     {
-      name: 'Admin',
+      name: 'Administrador general',
       value: 'admin',
       select: false
     },
     {
-      name: 'Manager',
+      name: 'Encargado',
       value: 'manager',
-      select: false
-    },
-    {
-      name: 'User',
-      value: 'user',
       select: false
     }
   ];
@@ -178,6 +174,7 @@ export class AddComponent implements OnInit {
               public shared: ShareService,
               private http: HttpClient,
               private cookie: CookieService,
+              private auth: AuthGService,
               private route: ActivatedRoute) {
   }
 
@@ -186,6 +183,7 @@ export class AddComponent implements OnInit {
       this.id = params.id;
       this.load();
       this.parseUser();
+
     });
 
     this.form = this.formBuilder.group({
@@ -197,10 +195,16 @@ export class AddComponent implements OnInit {
       images: [''],
       avatar: [''],
     });
-
+    const user = this.auth.getUser();
+    if (user && user.zone) {
+      this.form.patchValue({
+        zone: user.zone
+      });
+    }
     this.form.patchValue({
       level: 'manager'
     });
+
   }
 
   onSubmit = () => {

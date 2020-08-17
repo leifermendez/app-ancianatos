@@ -28,6 +28,18 @@ export class AddComponent implements OnInit {
   public users = [];
   public institutions = [];
   adapter = new FPickerAdapter(this.http, this.cookie);
+  public type = [
+    {
+      name: 'Publico',
+      value: 'public',
+      select: false
+    },
+    {
+      name: 'Privado',
+      value: 'private',
+      select: false
+    }
+  ];
 
   constructor(private formBuilder: FormBuilder,
               private rest: RestService,
@@ -51,6 +63,7 @@ export class AddComponent implements OnInit {
       address: ['', Validators.required],
       phone: ['', Validators.required],
       description: [''],
+      type: [''],
       // user_id: ['', Validators.required],
       images: [''],
       extra: ['']

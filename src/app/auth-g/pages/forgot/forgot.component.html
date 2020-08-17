@@ -12,15 +12,10 @@
           <input type="email" autocomplete="off" formControlName="email" class="form-control" id="login_email">
           <small id="emailHelp" class="form-text text-muted">{{"LOGIN.EMAIL_PLACEHOLDER" | translate}}</small>
         </div>
-        <div class="form-group">
-          <label for="login_password">{{"LOGIN.PASSWORD" | translate}}</label>
-          <input type="password" autocomplete="off" formControlName="password" class="form-control" id="login_password"
-                 placeholder="Password">
-        </div>
         <button type="submit" [disabled]="!form.valid" class="btn btn-info btn-block">
           {{"LOGIN.SEND" | translate}}
         </button>
-        <div class="mt-2 text-center p-2" [routerLink]="['/','auth','forgot']">
+        <div class="mt-2 text-center p-2">
           <span class="text-muted">{{"LOGIN.FORGOT_PASSWORD" | translate}}</span>
         </div>
       </form>

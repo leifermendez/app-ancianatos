@@ -31,7 +31,7 @@
       </select>
       <small class="form-text text-muted">{{"USER.FORM.LEVEL_PLACEHOLDER" |translate}}</small>
     </div>
-    <div class="form-group">
+    <div class="form-group" *ngIf="!form.value.zone || lvl ==='admin'">
       <label for="form_level">{{"USER.FORM.ZONE" |translate}}</label>
       <select formControlName="zone" class="form-control" id="form_zone">
         <option *ngFor="let zone of zones" [value]="zone?.value">{{zone?.name}}</option>

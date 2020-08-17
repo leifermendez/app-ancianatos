@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     const {level} = this.auth.getUser();
     this.menu = [
       {
-        name: 'Instituciones',
+        name: 'Hogares',
         icon: this.faHome,
         scope: ['admin', 'manager'].includes(level),
         source: ['/', 'institutions']
