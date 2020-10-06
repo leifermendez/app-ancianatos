@@ -140,6 +140,7 @@
     "EMAIL": "Email",
     "EMAIL_PLACEHOLDER": "Ingresá tu email",
     "PASSWORD": "Contraseña",
+    "FORGOT_PASSWORD": "Olvide mi contraseña",
     "SEND": "Entrar"
   },
   "ERROR": {

@@ -165,6 +165,11 @@ export class AddComponent implements OnInit {
       name: 'Encargado',
       value: 'manager',
       select: false
+    },
+    {
+      name: 'Usuario',
+      value: 'user',
+      select: false
     }
   ];
 

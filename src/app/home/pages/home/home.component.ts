@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   public menu: any = [];
 
   constructor(public auth: AuthGService) {
-    console.log(this.auth.getUser());
   }
 
   ngOnInit() {
@@ -25,18 +24,18 @@ export class HomeComponent implements OnInit {
       {
         name: 'Hogares',
         icon: this.faHome,
-        scope: ['admin', 'manager'].includes(level),
+        scope: ['admin', 'manager', 'user'].includes(level),
         source: ['/', 'institutions']
       },
       {
         name: 'Personal',
-        scope: ['admin', 'manager'].includes(level),
+        scope: ['admin', 'manager', 'user'].includes(level),
         icon: this.faUserNurse,
         source: ['/', 'staff']
       },
       {
         name: 'Pacientes',
-        scope: ['admin', 'manager'].includes(level),
+        scope: ['admin', 'manager', 'user'].includes(level),
         icon: this.faUserShield,
         source: ['/', 'patients']
       },
