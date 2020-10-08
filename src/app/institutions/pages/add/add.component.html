@@ -42,7 +42,7 @@
     </div>
     <div class="form-group">
       <label>{{"INSTITUTIONS.FORM.TAG" |translate}}</label>
-      <tag-input [identifyBy]="'key'" [displayBy]="'value'" [placeholder]="''" [(ngModel)]="itemsAsObjects"
+      <tag-input [identifyBy]="'key'"  [secondaryPlaceholder]="''" [displayBy]="'value'" [placeholder]="''" [(ngModel)]="itemsAsObjects"
                  [ngModelOptions]="{standalone: true}"></tag-input>
       <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
     </div>

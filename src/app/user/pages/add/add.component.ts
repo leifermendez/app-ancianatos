@@ -162,7 +162,7 @@ export class AddComponent implements OnInit {
       select: false
     },
     {
-      name: 'Encargado',
+      name: 'Comuna / Municipio',
       value: 'manager',
       select: false
     },
