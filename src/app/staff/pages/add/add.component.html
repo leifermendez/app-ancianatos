@@ -33,16 +33,29 @@
       <small class="form-text text-muted">{{"STAFF.FORM.AGE_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
-      <label for="form_address">{{"STAFF.FORM.ADDRESS" |translate}}</label>
-      <input type="text" formControlName="address" class="form-control" id="form_address"
+      <label for="form_phone">{{"STAFF.FORM.ADDRESS" |translate}}</label>
+      <input type="phone" formControlName="address" class="form-control" id="form_address"
              placeholder="">
       <small class="form-text text-muted">{{"STAFF.FORM.ADDRESS_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label for="form_address_1">{{"STAFF.FORM.ADDRESS_TWO" |translate}}</label>
+      <input type="text" formControlName="addressMore" class="form-control" id="form_address_1"
+             placeholder="">
+      <small class="form-text text-muted">{{"STAFF.FORM.ADDRESS_TWO_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
       <label>{{"STAFF.FORM.TAG" |translate}}</label>
       <tag-input [identifyBy]="'key'"  [secondaryPlaceholder]="''" [displayBy]="'value'" [placeholder]="''" [(ngModel)]="itemsAsObjects"
                  [ngModelOptions]="{standalone: true}"></tag-input>
       <small class="form-text text-muted">{{"STAFF.FORM.TAG_PLACEHOLDER" |translate}}</small>
+    </div>
+    <div class="form-group">
+      <label for="form_gender">{{"STAFF.FORM.GENDER" |translate}}</label>
+      <select formControlName="gender" class="form-control" id="form_gender">
+        <option *ngFor="let g of gender" [value]="g?.value">{{g?.name}}</option>
+      </select>
+      <small class="form-text text-muted">{{"STAFF.FORM.GENDER_PLACEHOLDER" |translate}}</small>
     </div>
     <div class="form-group">
       <label for="form_institutions">{{"STAFF.FORM.INSTITUTIONS" |translate}}</label>

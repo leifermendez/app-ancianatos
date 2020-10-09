@@ -29,6 +29,10 @@ export class AddComponent implements OnInit {
   adapter = new FPickerAdapter(this.http, this.cookie);
   public form: FormGroup;
   public institutions = [];
+  public gender = [
+    {name: 'Masculino', value: 'm'},
+    {name: 'Femenino', value: 'f'}
+  ];
 
   constructor(private formBuilder: FormBuilder,
               private rest: RestService,
@@ -53,6 +57,8 @@ export class AddComponent implements OnInit {
       address: ['', Validators.required],
       age: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      addressMore: [''],
+      gender: [''],
       extra: [''],
       images: [''],
       institutions_id: ['', Validators.required],
@@ -145,7 +151,6 @@ export class AddComponent implements OnInit {
       }, error => {
       });
   };
-
 
 
 }
