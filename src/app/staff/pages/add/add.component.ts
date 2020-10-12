@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ShareService} from '../../../share.service';
 import {HttpClient} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
+import {AuthGService} from '../../../auth-g.service';
 
 @Component({
   selector: 'app-add',
@@ -40,6 +41,7 @@ export class AddComponent implements OnInit {
               private shared: ShareService,
               private http: HttpClient,
               private cookie: CookieService,
+              private auth: AuthGService,
               private route: ActivatedRoute) {
   }
 
@@ -145,7 +147,8 @@ export class AddComponent implements OnInit {
   };
 
   loadInstitutions = () => {
-    this.rest.get(`institutions?limit=10000`)
+    const myHomeId = this.auth.getUser();
+    this.rest.get(`institutions?limit=10000&filters=id,=,${myHomeId.institutions_id}`)
       .subscribe(res => {
         this.institutions = res.data.data;
       }, error => {

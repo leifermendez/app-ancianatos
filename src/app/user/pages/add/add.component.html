@@ -23,7 +23,13 @@
                  [ngModelOptions]="{standalone: true}"></tag-input>
       <small class="form-text text-muted">{{"USER.FORM.TAG_PLACEHOLDER" |translate}}</small>
     </div>
-
+    <div class="form-group" *ngIf="lvl ==='manager'">
+      <label for="form_institutions">{{"STAFF.FORM.INSTITUTIONS" |translate}}</label>
+      <select formControlName="institutions_id" class="form-control" id="form_institutions">
+        <option *ngFor="let level of institutions" [value]="level?.id">{{level?.name}}</option>
+      </select>
+      <small class="form-text text-muted">{{"STAFF.FORM.INSTITUTIONS_PLACEHOLDER" |translate}}</small>
+    </div>
     <div class="form-group" *ngIf="lvl ==='admin'">
       <label for="form_level">{{"USER.FORM.LEVEL" |translate}}</label>
       <select formControlName="level" class="form-control" id="form_level">

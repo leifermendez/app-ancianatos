@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       {
         name: 'Hogares',
         icon: this.faHome,
-        scope: ['admin', 'manager', 'user'].includes(level),
+        scope: ['admin', 'manager'].includes(level),
         source: ['/', 'institutions']
       },
       {

@@ -11,6 +11,7 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {ModalPhotoComponent} from '../../../components/modal-photo/modal-photo.component';
 import {WebCamComponent} from '../../../components/web-cam/web-cam.component';
 import {environment} from '../../../../environments/environment';
+import {AuthGService} from '../../../auth-g.service';
 
 @Component({
   selector: 'app-add',
@@ -44,6 +45,7 @@ export class AddComponent implements OnInit {
               private http: HttpClient,
               private modalService: BsModalService,
               private cookie: CookieService,
+              private auth: AuthGService,
               private route: ActivatedRoute) {
     this.shared.loadingEmit.subscribe(l => this.loading = l);
     this.shared.camImage.subscribe(res => {
@@ -197,7 +199,8 @@ export class AddComponent implements OnInit {
 
 
   loadInstitutions = () => {
-    this.rest.get(`institutions?limit=10000`)
+    const myHomeId = this.auth.getUser();
+    this.rest.get(`institutions?limit=10000&filters=id,=,${myHomeId.institutions_id}`)
       .subscribe(res => {
         this.institutions = res.data.data;
       }, error => {

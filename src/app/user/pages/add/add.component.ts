@@ -28,6 +28,7 @@ export class AddComponent implements OnInit {
   public id: any = false;
   public images = [];
   adapter = new FPickerAdapter(this.http, this.cookie);
+  public institutions = [];
   public form: FormGroup;
   public zones = [
     {
@@ -188,6 +189,7 @@ export class AddComponent implements OnInit {
       this.id = params.id;
       this.load();
       this.parseUser();
+      this.loadInstitutions();
 
     });
 
@@ -196,6 +198,7 @@ export class AddComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       level: ['', Validators.required],
       zone: ['', Validators.required],
+      institutions_id: [''],
       extra: [''],
       images: [''],
       avatar: [''],
@@ -211,6 +214,14 @@ export class AddComponent implements OnInit {
     });
 
   }
+
+  loadInstitutions = () => {
+    this.rest.get(`institutions?limit=10000`)
+      .subscribe(res => {
+        this.institutions = res.data.data;
+      }, error => {
+      });
+  };
 
   onSubmit = () => {
     this.loading = true;
