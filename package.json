@@ -35,7 +35,7 @@
     "@ngx-formly/schematics": "^5.7.2",
     "@ngx-translate/core": "^12.1.2",
     "@ngx-translate/http-loader": "^4.0.0",
-    "bootstrap": "4.1.1",
+    "bootstrap": "4.3.1",
     "cordova-android": "^8.1.0",
     "cordova-plugin-file": "^6.0.2",
     "cordova-plugin-file-transfer": "^1.7.1",
